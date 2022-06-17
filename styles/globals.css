@@ -12,3 +12,25 @@
 }
 
 @tailwind utilities;
+
+h1 {
+    @apply text-white text-4xl font-bold;
+}
+h2 {
+    @apply text-white text-3xl font-bold;
+}
+h3 {
+    @apply text-white text-2xl font-bold;
+}
+h4 {
+    @apply text-white text-xl font-bold;
+}
+h5 {
+    @apply text-white text-lg font-bold;
+}
+h6 {
+    @apply text-white font-bold;
+}
+p {
+    @apply text-white;
+}

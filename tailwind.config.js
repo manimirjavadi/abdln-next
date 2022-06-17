@@ -9,6 +9,12 @@ module.exports = {
       fontFamily: {
         sans: ["vazirmatn"],
       },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        abdlBlue: "#D98C00",
+        abdlOrange: "#000957",
+      },
     },
   },
   plugins: [

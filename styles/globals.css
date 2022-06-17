@@ -1,16 +1,14 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+
+@layer base {
+    @font-face {
+        font-family: 'vazirmatn';
+        src: local('vazirmatn'), url("../assets/fonts/Vazirmatn[wght].woff2");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+@tailwind utilities;

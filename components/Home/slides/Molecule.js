@@ -25,9 +25,9 @@ const gifVariant = {
   },
 };
 
-export const Molecule = () => {
+export const Molecule = ({ animatorController }) => {
   return (
-    <div className="w-full h-full bg-abdlOrange">
+    <div id="molecule" className="w-full h-full bg-abdlOrange">
       <div className="max-w-6xl mx-auto grid grid-cols-1 h-full md:grid-cols-2 items-center place-content-center gap-8">
         <motion.div
           variants={textVariant}

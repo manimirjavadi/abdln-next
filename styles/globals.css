@@ -34,3 +34,12 @@ h6 {
 p {
     @apply text-white;
 }
+
+.fp-arrow {
+    @apply mx-12;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: none !important;
+    background-color: white !important;
+}

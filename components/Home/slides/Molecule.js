@@ -20,6 +20,7 @@ const textVariant = {
 const gifVariant = {
   hidden: {
     opacity: 0,
+    rotate: 0,
     x: "100vw",
     transition: {
       duration: 0.01,
@@ -65,7 +66,7 @@ export const Molecule = ({ animatorController }) => {
   }, [animatorController, controlsText, controlsGif]);
 
   return (
-    <div id="molecule" className="w-full h-full bg-black">
+    <div id="molecule" className="w-full h-full bg-abdlOrange">
       <div className="max-w-6xl mx-auto grid grid-cols-1 h-full md:grid-cols-2 items-center place-content-center gap-8">
         <motion.div
           variants={gifVariant}

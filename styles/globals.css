@@ -45,9 +45,15 @@ p {
 }
 
 a {
-    @apply text-gray-200;
+    @apply text-abdlBlue text-lg;
 }
 
 .navbarActive {
-    @apply text-white text-lg;
+    @apply text-white text-xl;
+}
+
+.productsContainer {
+    background: no-repeat;
+    background-image: url('/abdP.svg');
+    background-position: center;
 }

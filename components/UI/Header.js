@@ -26,7 +26,7 @@ export const Header = (props) => {
           className="absolute h-screen w-full mt-16 bg-black/20"
         />
       )}
-      <nav className="py-5">
+      <nav className="max-w-5xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5">
         <aside
           className={`bg-abdlBlue top-16 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 ${
             menu === 1 ? "" : "translate-x-full"
@@ -176,7 +176,7 @@ export const Header = (props) => {
               <Link href="/">
                 <a>
                   <Image
-                    src={darkLogo}
+                    src={lightLogo}
                     height="45rem"
                     width="90rem"
                     alt="عبداللهیان"

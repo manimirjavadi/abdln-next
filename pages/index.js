@@ -3,6 +3,7 @@ import Head from "next/head";
 import MainLayout from "../components/layouts/main-layout";
 import { useEffect } from "react";
 import { Intro } from "../components/Home/Intro";
+import { Header } from "../components/UI/Header";
 
 export default function Home() {
   useEffect(() => {

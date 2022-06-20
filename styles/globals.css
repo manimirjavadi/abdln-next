@@ -43,3 +43,11 @@ p {
     background: none !important;
     background-color: white !important;
 }
+
+a {
+    @apply text-gray-200;
+}
+
+.navbarActive {
+    @apply text-white text-lg;
+}

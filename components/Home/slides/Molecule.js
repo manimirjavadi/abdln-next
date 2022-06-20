@@ -28,7 +28,7 @@ const gifVariant = {
   zoom: {
     scale: 1.3,
     transition: {
-      repeat: 1000,
+      repeat: 100,
       repeatType: "reverse",
       duration: 15,
     },
@@ -36,7 +36,7 @@ const gifVariant = {
   rotate: {
     rotate: 30,
     transition: {
-      repeat: 1000,
+      repeat: 100,
       repeatType: "reverse",
       duration: 30,
     },

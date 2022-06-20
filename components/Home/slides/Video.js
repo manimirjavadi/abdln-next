@@ -21,14 +21,20 @@ export const Video = ({ animatorController }) => {
     }
   }, [animatorController, controls]);
   return (
-    <div id="video" className="video-container w-full h-full bg-black">
+    <div id="video" className="video-container w-full h-full bg-black grid">
       <motion.div
         variants={videoVariant}
         initial="hidden"
         animate={controls}
         transition={{ duration: 1 }}
       >
-        <video loop autoPlay className="min-h-full min-w-full">
+        <video
+          loop
+          autoPlay
+          playsInline
+          muted
+          className="min-h-full min-w-full"
+        >
           <source src="theVideo.mp4" type="video/mp4" />
           متاسفانه مرورگر شما از این ویدیو پشتیبانی نمی‌کند.
         </video>

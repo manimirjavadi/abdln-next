@@ -3,11 +3,13 @@ import Carousel from "re-carousel";
 import IndicatorDots from "../UI/IndicatorDots";
 import { MainSlide } from "./slides/MainSlide";
 import { Molecule } from "./slides/Molecule";
+import { Video } from "./slides/Video";
 
 export const Intro = () => {
   const [currentSlide, setCurrentSlide] = useState("main");
   const [startMainAnimation, setStartMainAnimation] = useState(true);
   const [startMoleculeAnimation, setStartMoleculeAnimation] = useState(false);
+  const [startVideoAnimation, setVideoAnimation] = useState(false);
 
   const manageAnimation = (event) => {
     if (event.current.children[0].id !== currentSlide) {
@@ -15,11 +17,19 @@ export const Intro = () => {
         setCurrentSlide("molecule");
         setStartMoleculeAnimation(true);
         setStartMainAnimation(false);
+        setVideoAnimation(false);
       }
       if (event.current.children[0].id === "main") {
         setCurrentSlide("main");
         setStartMoleculeAnimation(false);
         setStartMainAnimation(true);
+        setVideoAnimation(false);
+      }
+      if (event.current.children[0].id === "video") {
+        setCurrentSlide("video");
+        setStartMainAnimation(false);
+        setStartMoleculeAnimation(false);
+        setVideoAnimation(true);
       }
     }
   };
@@ -36,7 +46,7 @@ export const Intro = () => {
 
       <Molecule id="molecule" animatorController={startMoleculeAnimation} />
 
-      <div style={{ backgroundColor: "orange", height: "100%" }}>Frame 3</div>
+      <Video id="video" animatorController={startVideoAnimation} />
     </Carousel>
   );
 };

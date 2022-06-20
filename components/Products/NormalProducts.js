@@ -1,20 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { ProductCard } from "./Fragments/ProductCard";
-
-const backgroundVariant = {
-  zoom: {
-    initial: {
-      scale: 1,
-    },
-    scale: 1.2,
-    transition: {
-      duration: 60,
-    },
-  },
-};
 
 export const NormalProducts = () => {
   return (

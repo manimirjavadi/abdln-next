@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Intro } from "../components/Home/Intro";
 import { Header } from "../components/UI/Header";
 import { NormalProducts } from "../components/Products/NormalProducts";
+import { SpecialProducts } from "../components/Products/SpecialProducts";
 
 export default function Home() {
   useEffect(() => {
@@ -65,6 +66,9 @@ export default function Home() {
               </div>
               <div className="section">
                 <NormalProducts />
+              </div>
+              <div className="section">
+                <SpecialProducts />
               </div>
             </ReactFullpage.Wrapper>
           )

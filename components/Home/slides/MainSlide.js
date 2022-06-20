@@ -53,7 +53,7 @@ export const MainSlide = ({ animatorController }) => {
             variants={textVariant}
             initial="hidden"
             animate={controlsText}
-            transition={{ delay: 0.3, duration: 0.7, type: "spring" }}
+            transition={{ duration: 0.7, type: "spring" }}
             className="md:w-[80%] px-6 order-2 md:order-1 md:pr-4"
           >
             <h1>عبداللهیان</h1>
@@ -70,7 +70,7 @@ export const MainSlide = ({ animatorController }) => {
             variants={gifVariant}
             initial="hidden"
             animate={controlsGif}
-            transition={{ delay: 0.3, duration: 0.7, type: "spring" }}
+            transition={{ delay: 0.2, duration: 0.7, type: "spring" }}
             className="order-1"
           >
             <div className="w-full h-full">

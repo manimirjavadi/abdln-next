@@ -4,6 +4,7 @@ import MainLayout from "../components/layouts/main-layout";
 import { useEffect } from "react";
 import { Intro } from "../components/Home/Intro";
 import { Header } from "../components/UI/Header";
+import { NormalProducts } from "../components/Products/NormalProducts";
 
 export default function Home() {
   useEffect(() => {
@@ -62,7 +63,9 @@ export default function Home() {
               <div className="section">
                 <Intro />
               </div>
-              <div className="section">section 2</div>
+              <div className="section">
+                <NormalProducts />
+              </div>
             </ReactFullpage.Wrapper>
           )
         }

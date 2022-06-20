@@ -53,7 +53,12 @@ a {
 }
 
 .productsContainer {
+    background-color: #89CFF0;
     background: no-repeat;
     background-image: url('/abdP.svg');
     background-position: center;
+}
+
+.productCard {
+    @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
 }

@@ -65,7 +65,7 @@ export const Molecule = ({ animatorController }) => {
   }, [animatorController, controlsText, controlsGif]);
 
   return (
-    <div id="molecule" className="w-full h-full bg-abdlOrange">
+    <div id="molecule" className="w-full h-full bg-black">
       <div className="max-w-6xl mx-auto grid grid-cols-1 h-full md:grid-cols-2 items-center place-content-center gap-8">
         <motion.div
           variants={gifVariant}
@@ -88,7 +88,7 @@ export const Molecule = ({ animatorController }) => {
           initial="hidden"
           animate={controlsText}
           transition={{ delay: 0.3, duration: 0.7, type: "spring" }}
-          className="md:w-[80%] order-2"
+          className="md:w-[80%] px-6 order-2 md:pr-4"
         >
           <h1>عبداللهیان</h1>
           <p className="mt-6 text-justify">

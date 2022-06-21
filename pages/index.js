@@ -6,6 +6,7 @@ import { Intro } from "../components/Home/Intro";
 import { Header } from "../components/UI/Header";
 import { NormalProducts } from "../components/Products/NormalProducts";
 import { SpecialProducts } from "../components/Products/SpecialProducts";
+import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 
 export default function Home() {
   useEffect(() => {
@@ -69,6 +70,9 @@ export default function Home() {
               </div>
               <div className="section">
                 <SpecialProducts />
+              </div>
+              <div className="section">
+                <ManufacturersSection />
               </div>
             </ReactFullpage.Wrapper>
           )

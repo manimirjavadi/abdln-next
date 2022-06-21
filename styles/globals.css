@@ -57,6 +57,7 @@ a {
     background: no-repeat;
     background-image: url('/abdP.svg');
     background-position: center;
+    z-index: 0;
 }
 
 .productCard {

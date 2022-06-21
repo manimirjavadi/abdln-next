@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const ManufacturersSection = () => {
@@ -8,18 +9,80 @@ export const ManufacturersSection = () => {
       <div className="max-w-5xl mx-auto w-full">
         <div className="w-full h-full gap-8" style={{ zIndex: 20 }}>
           <div className="h-[150px]"></div>
-          <div>
+          <div className="pt-6">
             <div className="w-full md:flex justify-between items-center">
               <div className="w-96">
                 <h1>تامین‌کنندگان</h1>
               </div>
-              <div className="w-full overflow-hidden">
-                <div className="h-[200px] bg-white rounded-[200px]"></div>
+              <div className="w-full">
+                <div className="h-[170px] bg-white rounded-[200px] overflow-hidden">
+                  <div className="w-full grid grid-cols-4 place-items-center">
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/celito.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/celotech.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/cemotech.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/fenghung.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div className="w-full md:flex justify-between items-center mt-16">
               <div className="w-full overflow-hidden">
-                <div className="h-[200px] bg-white rounded-[200px]"></div>
+                <div className="h-[200px] bg-white rounded-[200px] overflow-hidden">
+                  <div className="w-full grid grid-cols-4 place-items-center">
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/imerys.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/sh1.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/SHHxtc.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                    <Image
+                      alt="عبداللهیان"
+                      src="/tempImgs/1n.jpg"
+                      height="200px"
+                      width="200px"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="w-96 flex justify-end">
                 <Link href="./manufacturers">

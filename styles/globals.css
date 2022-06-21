@@ -12,3 +12,54 @@
 }
 
 @tailwind utilities;
+
+h1 {
+    @apply text-white text-4xl font-bold;
+}
+h2 {
+    @apply text-white text-3xl font-bold;
+}
+h3 {
+    @apply text-white text-2xl font-bold;
+}
+h4 {
+    @apply text-white text-xl font-bold;
+}
+h5 {
+    @apply text-white text-lg font-bold;
+}
+h6 {
+    @apply text-white font-bold;
+}
+p {
+    @apply text-white;
+}
+
+.fp-arrow {
+    @apply mx-12;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: none !important;
+    background-color: white !important;
+}
+
+a {
+    @apply text-abdlBlue text-lg;
+}
+
+.navbarActive {
+    @apply text-white text-xl;
+}
+
+.productsContainer {
+    background-color: #89CFF0;
+    background: no-repeat;
+    background-image: url('/abdP.svg');
+    background-position: center;
+    z-index: 0;
+}
+
+.productCard {
+    @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
+}

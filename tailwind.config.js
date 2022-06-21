@@ -12,8 +12,8 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        abdlBlue: "#D98C00",
-        abdlOrange: "#000957",
+        abdlOrange: "#D98C00",
+        abdlBlue: "#000957",
       },
     },
   },

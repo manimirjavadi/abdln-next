@@ -1,7 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
 import MainLayout from "../components/layouts/main-layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Intro } from "../components/Home/Intro";
 import { Header } from "../components/UI/Header";
 import { NormalProducts } from "../components/Products/NormalProducts";
@@ -9,6 +9,7 @@ import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 
 export default function Home() {
+  const [animateManufacturers, setAnimateManufacturers] = useState(false);
   useEffect(() => {
     const allWithClass = Array.from(
       document.getElementsByClassName("fp-watermark")
@@ -20,33 +21,35 @@ export default function Home() {
   }, []);
 
   const onLeave = (origin, destination, direction) => {
-      console.log("onLeave", { origin, destination, direction });
-      // arguments are mapped in order of fullpage.js callback arguments do something
-      // with the event
-    },
-    handleChangeColors = () => {
-      const newColors =
-        sectionsColor[0] === "yellow"
-          ? [...originalColors]
-          : ["yellow", "blue", "white"];
-      return setsectionsColor(newColors);
-    },
-    handleAddSection = () => {
-      const { length } = fullpages;
-      fullpages.push({
-        text: `section ${length + 1}`,
-        id: Math.random(),
-      });
-      return setfullpages([...fullpages]);
-    },
-    handleRemoveSection = () => {
-      const newPages = [...fullpages];
-      newPages.pop();
-      return setfullpages(newPages);
-    },
-    moveSectionDown = () => {
-      return fullpage_api.moveSectionDown();
-    };
+    if (destination.item?.id === "manufacturers") {
+      setAnimateManufacturers(true);
+    } else {
+      setAnimateManufacturers(false);
+    }
+  };
+  // const handleChangeColors = () => {
+  //   const newColors =
+  //     sectionsColor[0] === "yellow"
+  //       ? [...originalColors]
+  //       : ["yellow", "blue", "white"];
+  //   return setsectionsColor(newColors);
+  // },
+  // handleAddSection = () => {
+  //   const { length } = fullpages;
+  //   fullpages.push({
+  //     text: `section ${length + 1}`,
+  //     id: Math.random(),
+  //   });
+  //   return setfullpages([...fullpages]);
+  // },
+  // handleRemoveSection = () => {
+  //   const newPages = [...fullpages];
+  //   newPages.pop();
+  //   return setfullpages(newPages);
+  // },
+  // moveSectionDown = () => {
+  //   return fullpage_api.moveSectionDown();
+  // };
 
   return (
     <div>
@@ -71,8 +74,10 @@ export default function Home() {
               <div className="section">
                 <SpecialProducts />
               </div>
-              <div className="section">
-                <ManufacturersSection />
+              <div id="manufacturers" className="section">
+                <ManufacturersSection
+                  animatorController={animateManufacturers}
+                />
               </div>
             </ReactFullpage.Wrapper>
           )

@@ -7,6 +7,7 @@ import { Header } from "../components/UI/Header";
 import { NormalProducts } from "../components/Products/NormalProducts";
 import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
+import { News } from "../components/News/News";
 
 export default function Home() {
   const [animateManufacturers, setAnimateManufacturers] = useState(false);
@@ -73,6 +74,9 @@ export default function Home() {
               </div>
               <div className="section">
                 <SpecialProducts />
+              </div>
+              <div className="section">
+                <News />
               </div>
               <div id="manufacturers" className="section">
                 <ManufacturersSection

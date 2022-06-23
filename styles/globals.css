@@ -63,3 +63,7 @@ a {
 .productCard {
     @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
 }
+
+.newsCard {
+    @apply bg-black rounded-2xl h-[400px] bg-cover overflow-hidden;
+}

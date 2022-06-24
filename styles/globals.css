@@ -42,6 +42,7 @@ p {
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
     background: none !important;
     background-color: white !important;
+    border: 2px solid #727272 !important;
 }
 
 a {
@@ -78,4 +79,28 @@ a {
 
 .headerDark {
     @apply max-w-5xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
+}
+
+input {
+    @apply w-full bg-[#EBEBEB] h-14 px-6 rounded-3xl;
+}
+
+textarea {
+    @apply w-full bg-[#EBEBEB] h-40 px-6 rounded-3xl py-4;
+    resize: none;
+}
+
+button {
+    @apply w-full rounded-3xl bg-abdlOrange text-white text-lg font-bold py-3
+}
+
+button:hover {
+    @apply bg-white border-2 border-abdlOrange text-abdlOrange duration-200;
+}
+
+.mapContainer {
+    background: no-repeat;
+    background-image: url('/tempImgs/map.jpg');
+    background-position: center;
+    background-size: contain;
 }

@@ -3,9 +3,12 @@ import { Header } from "../UI/Header";
 import { Footer } from "../../components/Footer/Footer";
 import Head from "next/head";
 
-export default function aboutus({ children }) {
+export default function NormalPages({ children }) {
   return (
-    <div dir="rtl" className="mx-auto">
+    <div
+      dir="rtl"
+      className="mx-auto"
+    >
       <Head>
         <title>عبدالهیان | تامین کننده مواد شیمیایی و معدنی</title>
         <meta name="description" content="وبسایت رسمی عبدالهیان" />

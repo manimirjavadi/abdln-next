@@ -1,7 +1,5 @@
-import Image from "next/image";
 import React from "react";
 import AboutUsLayout from "../../components/layouts/aboutus-layout";
-import logo from "../../assets/images/abdln_f.png";
 import { motion } from "framer-motion";
 
 export default function AboutUs() {

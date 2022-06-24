@@ -52,6 +52,10 @@ a {
     @apply text-white text-xl;
 }
 
+.navbarActiveDark {
+    @apply text-abdlOrange text-xl;
+}
+
 .productsContainer {
     background-color: #89CFF0;
     background: no-repeat;
@@ -66,4 +70,12 @@ a {
 
 .newsCard {
     @apply bg-black rounded-2xl h-[400px] bg-cover overflow-hidden;
+}
+
+.headerLight {
+    @apply max-w-5xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
+}
+
+.headerDark {
+    @apply max-w-5xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
 }

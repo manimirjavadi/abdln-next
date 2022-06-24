@@ -8,9 +8,12 @@ import { NormalProducts } from "../components/Products/NormalProducts";
 import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 import { News } from "../components/News/News";
+import { Footer } from "../components/Footer/Footer";
 
 export default function Home() {
   const [animateManufacturers, setAnimateManufacturers] = useState(false);
+  const [hideHeader, setHideHeader] = useState(false);
+
   useEffect(() => {
     const allWithClass = Array.from(
       document.getElementsByClassName("fp-watermark")
@@ -27,30 +30,13 @@ export default function Home() {
     } else {
       setAnimateManufacturers(false);
     }
+
+    if (destination.item?.id === "footer") {
+      setHideHeader(true);
+    } else {
+      setHideHeader(false);
+    }
   };
-  // const handleChangeColors = () => {
-  //   const newColors =
-  //     sectionsColor[0] === "yellow"
-  //       ? [...originalColors]
-  //       : ["yellow", "blue", "white"];
-  //   return setsectionsColor(newColors);
-  // },
-  // handleAddSection = () => {
-  //   const { length } = fullpages;
-  //   fullpages.push({
-  //     text: `section ${length + 1}`,
-  //     id: Math.random(),
-  //   });
-  //   return setfullpages([...fullpages]);
-  // },
-  // handleRemoveSection = () => {
-  //   const newPages = [...fullpages];
-  //   newPages.pop();
-  //   return setfullpages(newPages);
-  // },
-  // moveSectionDown = () => {
-  //   return fullpage_api.moveSectionDown();
-  // };
 
   return (
     <div>
@@ -59,6 +45,7 @@ export default function Home() {
         <meta name="description" content="وبسایت رسمی عبداللهیان" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header hideHeader={hideHeader} />
       <ReactFullpage
         navigation
         onLeave={onLeave}
@@ -82,6 +69,9 @@ export default function Home() {
                 <ManufacturersSection
                   animatorController={animateManufacturers}
                 />
+              </div>
+              <div id="footer" className="section">
+                <Footer />
               </div>
             </ReactFullpage.Wrapper>
           )

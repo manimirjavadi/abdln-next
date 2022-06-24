@@ -2,8 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ProductCard } from "./Fragments/ProductCard";
+import useWindowDimensions from "../../hooks/WindowsDimension";
 
 export const SpecialProducts = () => {
+  const { height, width } = useWindowDimensions();
+
   return (
     <div className="w-full h-full bg-[#F1B3AA]">
       <motion.div
@@ -12,21 +15,21 @@ export const SpecialProducts = () => {
         transition={{ duration: 20, repeat: 100, repeatType: "reverse" }}
         className="productsContainer max-w-6xl mx-auto w-full"
       >
-        <div className="w-full h-full grid grid-cols-3 gap-8">
+        <div className="w-full h-full px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="h-[150px]"></div>
-          <div className="flex justify-between col-span-3">
+          <div className="flex justify-between md:col-span-3">
             <div>
-              <h2>محصولات بهداشتی</h2>
+              <h2>محصولات</h2>
             </div>
             <div>
               <Link href="./products">
-                <span className="text-white text-lg">مشاهده همه محصولات</span>
+                <span className="text-white text-lg">همه محصولات</span>
               </Link>
             </div>
           </div>
           <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {width > 768 && <ProductCard />}
+          {width > 768 && <ProductCard />}
         </div>
       </motion.div>
     </div>

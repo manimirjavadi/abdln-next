@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
+import useWindowDimensions from "../../hooks/WindowsDimension";
+import { VendorLogo } from "./Fragments/VendorLogo";
 
 const topListVariant = {
   hidden: {
@@ -41,6 +43,7 @@ const bottomListVariant = {
 
 export const ManufacturersSection = ({ animatorController }) => {
   const controlAnimation = useAnimation();
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     if (animatorController) {
@@ -53,16 +56,33 @@ export const ManufacturersSection = ({ animatorController }) => {
   return (
     <div className="w-full h-full bg-abdlOrange">
       <div className="max-w-5xl mx-auto w-full manufacturerContainer">
-        <motion.div className="w-full h-full gap-8" style={{ zIndex: 20 }}>
-          <div className="h-[150px]"></div>
-          <div className="pt-6">
+        <motion.div
+          className="w-full h-full gap-8 px-10 md:px-0"
+          style={{ zIndex: 20 }}
+        >
+          <div className="h-[150px] hidden md:block"></div>
+          {/* Mobile View */}
+          <div className="grid grid-cols-3 gap-2 pt-24 md:hidden">
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+            <VendorLogo source="/tempImgs/celito.jpg" />
+          </div>
+
+          {/* Desktop View */}
+          <div className="pt-6 hidden md:block">
             <motion.div
               variants={topListVariant}
               initial="hidden"
               animate={controlAnimation}
               className="w-full md:flex justify-between items-center"
             >
-              <div className="w-96">
+              <div className="w-96 hidden md:block">
                 <h1>تامین‌کنندگان</h1>
               </div>
               <div className="w-full">
@@ -115,7 +135,7 @@ export const ManufacturersSection = ({ animatorController }) => {
               className="w-full md:flex justify-between items-center mt-16"
             >
               <div className="w-full overflow-hidden">
-                <div className="h-[200px] bg-white rounded-[200px] overflow-hidden">
+                <div className="h-[170px] bg-white rounded-[200px] overflow-hidden">
                   <div className="w-full grid grid-cols-4 place-items-center">
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <Image
@@ -160,7 +180,7 @@ export const ManufacturersSection = ({ animatorController }) => {
                 <Link href="./manufacturers">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="text-white text-lg flex justify-end cursor-pointer"
+                    className="text-white text-lg justify-end cursor-pointer hidden md:flex"
                   >
                     همه تامین‌کنندگان
                     <span className="px-4 mt-2">

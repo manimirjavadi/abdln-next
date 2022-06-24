@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export const NewsCard = () => {
   return (
-    <motion.div whileHover={{ scale: 1.1 }} className="px-6 cursor-pointer">
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      className="px-6 py-10 cursor-pointer"
+    >
       <div className="newsCard relative">
         {/* News Title */}
         <div className="p-5">

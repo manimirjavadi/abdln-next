@@ -41,8 +41,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>عبداللهیان</title>
-        <meta name="description" content="وبسایت رسمی عبداللهیان" />
+        <title>عبدالهیان | تامین کننده مواد شیمیایی و معدنی</title>
+        <meta name="description" content="وبسایت رسمی عبدالهیان" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header hideHeader={hideHeader} />

@@ -4,7 +4,7 @@ import { TheForm } from "./TheForm";
 
 export const Footer = () => {
   return (
-    <div className="max-w-5xl mx-auto w-full">
+    <div className="max-w-5xl mx-auto w-full pt-32 px-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="theForm w-full">
           <TheForm />

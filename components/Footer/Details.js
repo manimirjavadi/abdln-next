@@ -73,7 +73,7 @@ export const Details = () => {
         </div>
       </div>
 
-      <div className="mt-8 bottom-0 absolute w-full">
+      <div className="mt-8 bottom-0 w-full">
         <div className="flex justify-between">
           {/* Instagram */}
           <a className="cursor-pointer hover:scale-125 duration-200">

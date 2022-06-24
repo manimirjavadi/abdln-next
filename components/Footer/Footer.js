@@ -6,7 +6,7 @@ export const Footer = ({ otherPages = false }) => {
   return (
     <div
       className={`${
-        otherPages ? "p-8 " : "p-32 "
+        otherPages ? "p-8 " : "p-20 "
       } max-w-5xl mx-auto w-full px-16 bg-white/30 rounded-t-3xl`}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

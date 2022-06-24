@@ -1,14 +1,19 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from "next/head";
 import MainLayout from "../components/layouts/main-layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Intro } from "../components/Home/Intro";
 import { Header } from "../components/UI/Header";
 import { NormalProducts } from "../components/Products/NormalProducts";
 import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
+import { News } from "../components/News/News";
+import { Footer } from "../components/Footer/Footer";
 
 export default function Home() {
+  const [animateManufacturers, setAnimateManufacturers] = useState(false);
+  const [hideHeader, setHideHeader] = useState(false);
+
   useEffect(() => {
     const allWithClass = Array.from(
       document.getElementsByClassName("fp-watermark")
@@ -20,33 +25,18 @@ export default function Home() {
   }, []);
 
   const onLeave = (origin, destination, direction) => {
-      console.log("onLeave", { origin, destination, direction });
-      // arguments are mapped in order of fullpage.js callback arguments do something
-      // with the event
-    },
-    handleChangeColors = () => {
-      const newColors =
-        sectionsColor[0] === "yellow"
-          ? [...originalColors]
-          : ["yellow", "blue", "white"];
-      return setsectionsColor(newColors);
-    },
-    handleAddSection = () => {
-      const { length } = fullpages;
-      fullpages.push({
-        text: `section ${length + 1}`,
-        id: Math.random(),
-      });
-      return setfullpages([...fullpages]);
-    },
-    handleRemoveSection = () => {
-      const newPages = [...fullpages];
-      newPages.pop();
-      return setfullpages(newPages);
-    },
-    moveSectionDown = () => {
-      return fullpage_api.moveSectionDown();
-    };
+    if (destination.item?.id === "manufacturers") {
+      setAnimateManufacturers(true);
+    } else {
+      setAnimateManufacturers(false);
+    }
+
+    if (destination.item?.id === "footer") {
+      setHideHeader(true);
+    } else {
+      setHideHeader(false);
+    }
+  };
 
   return (
     <div>
@@ -55,6 +45,7 @@ export default function Home() {
         <meta name="description" content="وبسایت رسمی عبداللهیان" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header hideHeader={hideHeader} />
       <ReactFullpage
         navigation
         onLeave={onLeave}
@@ -72,7 +63,15 @@ export default function Home() {
                 <SpecialProducts />
               </div>
               <div className="section">
-                <ManufacturersSection />
+                <News />
+              </div>
+              <div id="manufacturers" className="section">
+                <ManufacturersSection
+                  animatorController={animateManufacturers}
+                />
+              </div>
+              <div id="footer" className="section">
+                <Footer />
               </div>
             </ReactFullpage.Wrapper>
           )

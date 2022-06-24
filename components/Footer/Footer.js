@@ -2,9 +2,13 @@ import React from "react";
 import { Details } from "./Details";
 import { TheForm } from "./TheForm";
 
-export const Footer = () => {
+export const Footer = ({ otherPages = false }) => {
   return (
-    <div className="max-w-5xl mx-auto w-full pt-32 px-16">
+    <div
+      className={`${
+        otherPages ? "p-8 " : "p-20 "
+      } max-w-5xl mx-auto w-full px-16 bg-white/30 rounded-t-3xl`}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="theForm w-full">
           <TheForm />

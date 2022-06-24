@@ -16,7 +16,7 @@ const headerVariant = {
   },
 };
 
-export const Header = ({ hideHeader }) => {
+export const Header = ({ hideHeader, otherPages }) => {
   const router = useRouter();
   const [menu, setMenu] = useState(0);
   const animationController = useAnimation();
@@ -47,7 +47,15 @@ export const Header = ({ hideHeader }) => {
             className="absolute h-screen w-full mt-16 bg-black/20"
           />
         )}
-        <nav className={hideHeader ? "headerDark" : "headerLight"}>
+        <nav
+          className={
+            hideHeader
+              ? "headerDark"
+              : otherPages
+              ? "headerAlternate"
+              : "headerLight"
+          }
+        >
           <aside
             className={`bg-abdlBlue top-16 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 ${
               menu === 1 ? "" : "translate-x-full"
@@ -135,10 +143,12 @@ export const Header = ({ hideHeader }) => {
               <div className="hidden md:flex items-center">
                 <Link href="/">
                   <a
-                    className={`h-full grid place-content-center px-3 navbarText ml-8  ${
+                    className={`h-full grid place-content-center px-3 ml-8  ${
                       router.pathname === "/"
-                        ? "navbarActive"
-                        : "hover:text-abdOrange hover:border-b-4 hover:border-b-abdOrange duration-200"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
+                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
                     <span className="text-sm font-bold ">صفحه اصلی</span>
@@ -148,7 +158,9 @@ export const Header = ({ hideHeader }) => {
                   <a
                     className={`h-full grid place-content-center px-3 text-darkGrey ml-8  ${
                       router.pathname.startsWith("/aboutus")
-                        ? "navbarActive"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
@@ -157,9 +169,11 @@ export const Header = ({ hideHeader }) => {
                 </Link>
                 <Link href="/products/all">
                   <a
-                    className={`h-full grid place-content-center px-3 navbarText ml-8 ${
+                    className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/products")
-                        ? "navbarActive"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
@@ -168,9 +182,11 @@ export const Header = ({ hideHeader }) => {
                 </Link>
                 <Link href="/products/all">
                   <a
-                    className={`h-full grid place-content-center px-3 navbarText ml-8 ${
+                    className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/products")
-                        ? "navbarActive"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
@@ -179,9 +195,11 @@ export const Header = ({ hideHeader }) => {
                 </Link>
                 <Link href="/products/all">
                   <a
-                    className={`h-full grid place-content-center px-3 navbarText ml-8 ${
+                    className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/products")
-                        ? "navbarActive"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
@@ -190,9 +208,11 @@ export const Header = ({ hideHeader }) => {
                 </Link>
                 <Link href="/contactus">
                   <a
-                    className={`h-full grid place-content-center px-3 navbarText ml-8 ${
+                    className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/contactus")
-                        ? "navbarActive"
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >

@@ -92,7 +92,7 @@ export const Molecule = ({ animatorController }) => {
           className="md:w-[80%] px-6 order-2 md:pr-4"
         >
           <h1>عبداللهیان</h1>
-          <p className="mt-6 text-justify">
+          <p className="mt-6 text-justify text-white">
             لورم ایپسوم به معنای یه چیزی هست که نمی‌دانم. اما می‌دانم که این
             چیزا چیز هستن. به امید خدا در حال نوشتن یه خزعبلاتیم تا اینجا رو پر
             کنم. اهمیت پر کردن برای داشتن یک ادیت زیباست. اما هرچقدر می‌نویسم به

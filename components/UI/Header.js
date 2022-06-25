@@ -30,7 +30,6 @@ export const Header = ({ hideHeader, otherPages }) => {
   };
 
   useEffect(() => {
-    console.log(hideHeader);
     if (hideHeader) {
       animationController.start("hidden");
     } else {
@@ -57,7 +56,7 @@ export const Header = ({ hideHeader, otherPages }) => {
           }
         >
           <aside
-            className={`bg-abdlBlue top-16 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 ${
+            className={`bg-[#EBEBEB] top-16 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 ${
               menu === 1 ? "" : "translate-x-full"
             }`}
           >
@@ -66,7 +65,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                 <Link href="/">
                   <motion.a
                     className={`${
-                      router.pathname === "/" ? "navbarActive" : ""
+                      router.pathname === "/" ? "navbarActiveDark" : ""
                     }`}
                   >
                     <li className="text-lg mb-5 text-center">صفحه اصلی</li>
@@ -76,7 +75,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`${
                       router.pathname.startsWith("/aboutus")
-                        ? "navbarActive"
+                        ? "navbarActiveDark"
                         : ""
                     }`}
                   >
@@ -87,42 +86,44 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`${
                       router.pathname.startsWith("/products")
-                        ? "navbarActive"
+                        ? "navbarActiveDark"
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">محصولات</li>
+                    <li className="text-lg mb-5 text-center">محصولات صنعتی</li>
                   </a>
                 </Link>
                 <Link href="/reps/all">
                   <a
                     className={`${
-                      router.pathname.startsWith("/reps") ? "navbarActive" : ""
+                      router.pathname.startsWith("/reps")
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">اخبار</li>
+                    <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
                   </a>
                 </Link>
                 <Link href="/blog/all/1">
                   <a
                     className={`${
                       router.pathname.startsWith("/blog")
-                        ? "navbarActive mobile"
+                        ? "navbarActiveDark mobile"
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
+                    <li className="text-lg mb-5 text-center">اخبار</li>
                   </a>
                 </Link>
                 <Link href="/jobs/jform">
                   <a
                     className={`${
                       router.pathname.startsWith("/jobs")
-                        ? "navbarActive mobile"
+                        ? "navbarActiveDark mobile"
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">تماس با ما</li>
+                    <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
                   </a>
                 </Link>
               </ul>
@@ -167,23 +168,36 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">درباره ما</span>
                   </a>
                 </Link>
-                <Link href="/products/all">
+                <Link href="/nproducts/list">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
-                      router.pathname.startsWith("/products")
+                      router.pathname.startsWith("/nproducts")
                         ? otherPages
                           ? "navbarActiveDark"
                           : "navbarActive"
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
-                    <span className="text-sm font-bold">محصولات</span>
+                    <span className="text-sm font-bold">محصولات صنعتی</span>
+                  </a>
+                </Link>
+                <Link href="/sproducts/list">
+                  <a
+                    className={`h-full grid place-content-center px-3 ml-8 ${
+                      router.pathname.startsWith("/sproducts")
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
+                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                    }`}
+                  >
+                    <span className="text-sm font-bold">محصولات آرایشی</span>
                   </a>
                 </Link>
                 <Link href="/products/all">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
-                      router.pathname.startsWith("/products")
+                      router.pathname.startsWith("/news")
                         ? otherPages
                           ? "navbarActiveDark"
                           : "navbarActive"
@@ -193,10 +207,10 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">اخبار</span>
                   </a>
                 </Link>
-                <Link href="/products/all">
+                <Link href="/contactus">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
-                      router.pathname.startsWith("/products")
+                      router.pathname.startsWith("/manufacturers")
                         ? otherPages
                           ? "navbarActiveDark"
                           : "navbarActive"
@@ -204,19 +218,6 @@ export const Header = ({ hideHeader, otherPages }) => {
                     }`}
                   >
                     <span className="text-sm font-bold">تامین‌کنندگان</span>
-                  </a>
-                </Link>
-                <Link href="/contactus">
-                  <a
-                    className={`h-full grid place-content-center px-3 ml-8 ${
-                      router.pathname.startsWith("/contactus")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
-                    }`}
-                  >
-                    <span className="text-sm font-bold">تماس با ما</span>
                   </a>
                 </Link>
               </div>

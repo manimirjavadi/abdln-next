@@ -74,7 +74,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                 <Link href="/aboutus">
                   <a
                     className={`${
-                      router.pathname.startsWith("/aboutus")
+                      router.pathname.startsWith("/nproducts")
                         ? "navbarActiveDark"
                         : ""
                     }`}
@@ -82,10 +82,10 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">درباره ما</li>
                   </a>
                 </Link>
-                <Link href="/products/all">
+                <Link href="/nproducts/list">
                   <a
                     className={`${
-                      router.pathname.startsWith("/products")
+                      router.pathname.startsWith("/sproducts")
                         ? "navbarActiveDark"
                         : ""
                     }`}
@@ -93,10 +93,10 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">محصولات صنعتی</li>
                   </a>
                 </Link>
-                <Link href="/reps/all">
+                <Link href="/sproducts/list">
                   <a
                     className={`${
-                      router.pathname.startsWith("/reps")
+                      router.pathname.startsWith("/sproducts")
                         ? "navbarActiveDark"
                         : ""
                     }`}
@@ -104,10 +104,10 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
                   </a>
                 </Link>
-                <Link href="/blog/all/1">
+                <Link href="/news/list">
                   <a
                     className={`${
-                      router.pathname.startsWith("/blog")
+                      router.pathname.startsWith("/news")
                         ? "navbarActiveDark mobile"
                         : ""
                     }`}
@@ -115,10 +115,10 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">اخبار</li>
                   </a>
                 </Link>
-                <Link href="/jobs/jform">
+                <Link href="/manufacturers/list">
                   <a
                     className={`${
-                      router.pathname.startsWith("/jobs")
+                      router.pathname.startsWith("/manufacturers")
                         ? "navbarActiveDark mobile"
                         : ""
                     }`}
@@ -194,7 +194,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">محصولات آرایشی</span>
                   </a>
                 </Link>
-                <Link href="/products/all">
+                <Link href="/news/list">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/news")
@@ -207,7 +207,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">اخبار</span>
                   </a>
                 </Link>
-                <Link href="/contactus">
+                <Link href="/manufacturers/list">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/manufacturers")

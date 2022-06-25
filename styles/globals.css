@@ -75,7 +75,7 @@ a {
 }
 
 .newsCard {
-    @apply bg-black rounded-2xl h-[400px] bg-cover overflow-hidden;
+    @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
 }
 
 .headerLight {
@@ -91,7 +91,7 @@ a {
 }
 
 a:hover {
-    @apply hover:text-white hover:border-b-4 hover:border-b-white duration-200;
+    @apply hover:text-abdlOrange duration-200;
 }
 
 input {

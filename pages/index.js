@@ -50,32 +50,28 @@ export default function Home() {
         navigation
         onLeave={onLeave}
         scrollBar={false}
-        render={() =>
-          console.log("render prop change") || (
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <Intro />
-              </div>
-              <div className="section">
-                <NormalProducts />
-              </div>
-              <div className="section">
-                <SpecialProducts />
-              </div>
-              <div className="section">
-                <News />
-              </div>
-              <div id="manufacturers" className="section">
-                <ManufacturersSection
-                  animatorController={animateManufacturers}
-                />
-              </div>
-              <div id="footer" className="section">
-                <Footer />
-              </div>
-            </ReactFullpage.Wrapper>
-          )
-        }
+        render={() => (
+          <ReactFullpage.Wrapper>
+            <div className="section">
+              <Intro />
+            </div>
+            <div className="section">
+              <NormalProducts />
+            </div>
+            <div className="section">
+              <SpecialProducts />
+            </div>
+            <div className="section">
+              <News />
+            </div>
+            <div id="manufacturers" className="section">
+              <ManufacturersSection animatorController={animateManufacturers} />
+            </div>
+            <div id="footer" className="section">
+              <Footer />
+            </div>
+          </ReactFullpage.Wrapper>
+        )}
       ></ReactFullpage>
     </div>
   );

@@ -16,7 +16,7 @@ const headerVariant = {
   },
 };
 
-export const Header = ({ hideHeader, otherPages }) => {
+export const NHeader = ({ hideHeader, otherPages }) => {
   const router = useRouter();
   const [menu, setMenu] = useState(0);
   const animationController = useAnimation();
@@ -46,15 +46,7 @@ export const Header = ({ hideHeader, otherPages }) => {
             className="absolute h-screen w-full mt-16 bg-black/20"
           />
         )}
-        <nav
-          className={
-            hideHeader
-              ? "headerDark"
-              : otherPages
-              ? "headerAlternate"
-              : "headerLight"
-          }
-        >
+        <nav className="max-w-6xl mx-auto bg-white py-3 rounded-b-3xl px-5">
           <aside
             className={`bg-[#EBEBEB] top-16 right-0 w-full fixed h-full overflow-auto ease-in-out transition-all duration-300 ${
               menu === 1 ? "" : "translate-x-full"
@@ -86,7 +78,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`${
                       router.pathname.startsWith("/sproducts")
-                        ? "navbarActiveDark"
+                        ? "navbarActive"
                         : ""
                     }`}
                   >
@@ -145,11 +137,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                 <Link href="/">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8  ${
-                      router.pathname === "/"
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                      router.pathname === "/" ? "navbarActiveDark" : ""
                     }`}
                   >
                     <span className="text-sm font-bold ">صفحه اصلی</span>
@@ -159,10 +147,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`h-full grid place-content-center px-3 text-darkGrey ml-8  ${
                       router.pathname.startsWith("/aboutus")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
                     <span className="text-sm font-bold">درباره ما</span>
@@ -172,10 +158,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/nproducts")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
                     <span className="text-sm font-bold">محصولات صنعتی</span>
@@ -185,10 +169,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/sproducts")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
                     <span className="text-sm font-bold">محصولات آرایشی</span>
@@ -198,10 +180,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/news")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
                     <span className="text-sm font-bold">اخبار</span>
@@ -211,10 +191,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
                       router.pathname.startsWith("/manufacturers")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                        ? "navbarActiveDark"
+                        : ""
                     }`}
                   >
                     <span className="text-sm font-bold">تامین‌کنندگان</span>
@@ -225,7 +203,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                 <Link href="/">
                   <a>
                     <Image
-                      src={hideHeader ? darkLogo : lightLogo}
+                      src={lightLogo}
                       height="45rem"
                       width="90rem"
                       alt="عبداللهیان"

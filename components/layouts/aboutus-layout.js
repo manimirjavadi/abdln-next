@@ -12,7 +12,7 @@ export default function NormalPages({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NHeader hideHeader={true} otherPages={false} />
-      <div className="h-[100px]"></div>
+      <div className="h-[30px]"></div>
       <div>{children}</div>
       <div>
         <Footer otherPages={true} />

@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layouts/aboutus-layout";
 import Image from "next/dist/client/image";
 import { NewsCard } from "../../components/News/Fragments/NewsCard";
+import Link from "next/link";
 
 export default function List() {
   return (
@@ -63,15 +64,46 @@ export default function List() {
       <div className="max-w-5xl mx-auto mt-8 w-full">
         <div className="min-h-[500px] mb-6 bg-white/50 rounded-3xl px-16 py-4">
           <div className="grid grid-cols-3 gap-6 mt-6">
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
+            <Link href={"/news/something"}>
+              <div>
+                <NewsCard />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

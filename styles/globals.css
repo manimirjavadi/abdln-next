@@ -121,3 +121,7 @@ button:hover {
 p {
     @apply text-[#181818]
 }
+
+div.newsContainer p {
+    @apply mt-4 text-justify;
+}

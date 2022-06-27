@@ -123,7 +123,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
           <div className="flex justify-between">
             <div className="md:hidden flex items-center ml-6">
               <label onClick={menuHandler} className="btn btn-square btn-ghost">
-                <TIcon width="32" height="32" className="fill-white">
+                <TIcon width="32" height="32" className="fill-abdlBlue">
                   hamburgerMenu
                 </TIcon>
               </label>

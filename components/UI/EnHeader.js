@@ -15,7 +15,7 @@ const headerVariant = {
   },
 };
 
-export const NHeader = ({ hideHeader, otherPages }) => {
+export const EnHeader = ({ hideHeader, otherPages }) => {
   const router = useRouter();
   const [menu, setMenu] = useState(0);
   const animationController = useAnimation();
@@ -58,7 +58,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                     router.pathname === "/" ? "navbarActiveDark" : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">صفحه اصلی</li>
+                  <li className="text-lg mb-5 text-center">Home</li>
                 </motion.a>
               </Link>
               <Link href="/aboutus">
@@ -69,7 +69,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">درباره ما</li>
+                  <li className="text-lg mb-5 text-center">About Us</li>
                 </a>
               </Link>
               <Link href="/nproducts/list">
@@ -80,7 +80,9 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">محصولات صنعتی</li>
+                  <li className="text-lg mb-5 text-center">
+                    Industrial Products
+                  </li>
                 </a>
               </Link>
               <Link href="/sproducts/list">
@@ -91,7 +93,9 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
+                  <li className="text-lg mb-5 text-center">
+                    Cosmetic Products
+                  </li>
                 </a>
               </Link>
               <Link href="/news/list">
@@ -102,7 +106,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">اخبار</li>
+                  <li className="text-lg mb-5 text-center">News</li>
                 </a>
               </Link>
               <Link href="/manufacturers/list">
@@ -113,7 +117,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
+                  <li className="text-lg mb-5 text-center">Vendors</li>
                 </a>
               </Link>
             </ul>
@@ -123,7 +127,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
           <div className="flex justify-between">
             <div className="md:hidden flex items-center ml-6">
               <label onClick={menuHandler} className="btn btn-square btn-ghost">
-                <TIcon width="32" height="32" className="fill-abdlBlue">
+                <TIcon width="32" height="32" className="fill-abdlOrange">
                   hamburgerMenu
                 </TIcon>
               </label>
@@ -135,7 +139,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                     router.pathname === "/" ? "navbarActiveDark" : ""
                   }`}
                 >
-                  <span className="text-sm font-bold ">صفحه اصلی</span>
+                  <span className="text-sm font-bold ">Home</span>
                 </a>
               </Link>
               <Link href="/aboutus">
@@ -146,7 +150,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">درباره ما</span>
+                  <span className="text-sm font-bold">About Us</span>
                 </a>
               </Link>
               <Link href="/nproducts/list">
@@ -157,7 +161,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">محصولات صنعتی</span>
+                  <span className="text-sm font-bold">Industrial Products</span>
                 </a>
               </Link>
               <Link href="/sproducts/list">
@@ -168,7 +172,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">محصولات آرایشی</span>
+                  <span className="text-sm font-bold">Cosmetic Products</span>
                 </a>
               </Link>
               <Link href="/news/list">
@@ -179,7 +183,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">اخبار</span>
+                  <span className="text-sm font-bold">News</span>
                 </a>
               </Link>
               <Link href="/manufacturers/list">
@@ -190,7 +194,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">تامین‌کنندگان</span>
+                  <span className="text-sm font-bold">Vendors</span>
                 </a>
               </Link>
             </div>

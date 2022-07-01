@@ -1,14 +1,14 @@
 import React from "react";
-import Image from "next/dist/client/image";
-
-import antiAging from "../../../assets/images/antiAging.png";
-import antiOxidation from "../../../assets/images/antiOxidation.png";
-import cosmetics from "../../../assets/images/cosmetics.png";
-import hariCare from "../../../assets/images/hariCare.png";
-import hydration from "../../../assets/images/hydration.png";
-import skinCare from "../../../assets/images/skinCare.png";
+import AttrIcons from "../../../components/icons/AttrIcons";
 
 export const SproductCard = ({ cosmetic }) => {
+  const jsxIcons = cosmetic.acf.cosmetic_attributes.map((attr) => {
+    return (
+      <AttrIcons height={40} width={40} key={attr}>
+        {attr}
+      </AttrIcons>
+    );
+  });
   return (
     <div className="h-[360px] border-l-[10px] border-abdlOrange rounded-lg bg-white px-6 py-4 relative">
       <h5 className="text-black">{cosmetic.title.rendered}</h5>
@@ -44,24 +44,7 @@ export const SproductCard = ({ cosmetic }) => {
         </span>
       </div>
       <div className="grid grid-cols-6 absolute bottom-[10px] gap-1">
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={antiAging} />
-        </div>
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={antiOxidation} />
-        </div>
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={cosmetics} />
-        </div>
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={hariCare} />
-        </div>
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={hydration} />
-        </div>
-        <div className="h-[45px] w-[45px] relative">
-          <Image alt="Abdollahian" src={skinCare} />
-        </div>
+        {jsxIcons}
       </div>
     </div>
   );

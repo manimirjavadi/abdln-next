@@ -5,6 +5,7 @@ export async function wpHttp(
   limit = 100,
   page = "",
   p_category = "",
+  c_category = "",
   brand = "",
   search = "",
   lang = "fa"
@@ -15,6 +16,9 @@ export async function wpHttp(
   }
   if (p_category) {
     url += `&p_category=${p_category}`;
+  }
+  if (c_category) {
+    url += `&c_category=${c_category}`;
   }
   if (brand) {
     url += `&brand=${brand}`;
@@ -129,6 +133,29 @@ export async function getSlugs(type) {
     };
   });
   return elementIds;
+}
+
+export async function getCosmetics(limit = 100, page = "", c_category = "") {
+  const cosmeticRes = await wpHttp("cosmetics", limit, page, "", c_category);
+  let totalPages = 1;
+
+  for (let pair of cosmeticRes.headers.entries()) {
+    if (pair[0] === "x-wp-totalpages") {
+      totalPages = pair[1];
+    }
+  }
+
+  const cosmetics = await cosmeticRes.json();
+  Object.assign(cosmetics, { ...cosmetics, totalPages: totalPages });
+
+  return cosmetics;
+}
+
+export async function getCosmeticCategories(limit = 100) {
+  const categoriesRes = await wpHttp("cosmetic_categories", limit);
+  const categories = await categoriesRes.json();
+
+  return categories;
 }
 
 // TEAMAN TO BE DELETED

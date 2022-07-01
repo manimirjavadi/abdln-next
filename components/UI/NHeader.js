@@ -94,7 +94,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
                 </a>
               </Link>
-              <Link href="/news/list">
+              <Link href="/news/list/1">
                 <a
                   className={`${
                     router.pathname.startsWith("/news")
@@ -171,7 +171,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <span className="text-sm font-bold">محصولات آرایشی</span>
                 </a>
               </Link>
-              <Link href="/news/list">
+              <Link href="/news/list/1">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
                     router.pathname.startsWith("/news")

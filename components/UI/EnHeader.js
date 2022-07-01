@@ -98,7 +98,7 @@ export const EnHeader = ({ hideHeader, otherPages }) => {
                   </li>
                 </a>
               </Link>
-              <Link href="/news/list">
+              <Link href="/news/list/1">
                 <a
                   className={`${
                     router.pathname.startsWith("/news")
@@ -175,7 +175,7 @@ export const EnHeader = ({ hideHeader, otherPages }) => {
                   <span className="text-sm font-bold">Cosmetic Products</span>
                 </a>
               </Link>
-              <Link href="/news/list">
+              <Link href="/news/list/1">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
                     router.pathname.startsWith("/news")

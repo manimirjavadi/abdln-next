@@ -18,7 +18,7 @@ export const News = ({ posts }) => {
                 <h2 className="text-white">اخبار</h2>
               </div>
               <div className="cursor-pointer">
-                <Link href="./products">
+                <Link href="./news/list/1">
                   <span className="text-white text-lg">مشاهده همه خبر‌ها</span>
                 </Link>
               </div>

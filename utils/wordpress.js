@@ -65,6 +65,27 @@ export async function getAboutus(limit = 1) {
   return aboutus;
 }
 
+export async function getPages(type) {
+  let elements = [];
+
+  switch (type) {
+    case "posts":
+      elements = await getPosts();
+      break;
+  }
+
+  let pages = [];
+  for (let i = 1; i <= elements.totalPages; i++) {
+    pages.push({
+      params: {
+        page: i.toString(),
+      },
+    });
+  }
+
+  return pages;
+}
+
 // TEAMAN TO BE DELETED
 export async function getPost(slug) {
   const posts = await getPosts();
@@ -171,26 +192,4 @@ export async function getSlugs(type) {
   return elementIds;
 }
 
-export async function getPages(type) {
-  let elements = [];
 
-  switch (type) {
-    case "posts":
-      elements = await getPosts();
-      break;
-    case "products":
-      elements = await getProducts();
-      break;
-  }
-
-  let pages = [];
-  for (let i = 1; i <= elements.totalPages; i++) {
-    pages.push({
-      params: {
-        page: i.toString(),
-      },
-    });
-  }
-
-  return pages;
-}

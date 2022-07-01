@@ -129,7 +129,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const banners = await getPosts(3);
-  const posts = await getPosts(3, params.page);
+  const posts = await getPosts(20, params.page);
   const totalPages = posts.totalPages;
   const currentPage = params.page;
 

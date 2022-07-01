@@ -6,7 +6,8 @@ export async function wpHttp(
   page = "",
   p_category = "",
   brand = "",
-  search = ""
+  search = "",
+  lang = "fa"
 ) {
   let url = `${BASE_URL}/${REQUEST}?per_page=${limit}&_embed&acf_format=standard`;
   if (page) {
@@ -21,8 +22,19 @@ export async function wpHttp(
   if (search) {
     url += `&search=${search}`;
   }
+  if (lang) {
+    url += `&lang=${lang}`;
+  }
   const res = await fetch(url);
   return res;
+}
+
+export async function getSlides(limit = 2, page = "") {
+  const slideRes = await wpHttp("slides", limit, page);
+
+  const slides = await slideRes.json();
+  console.log(slides);
+  return slides;
 }
 
 export async function getPosts(limit = 100, page = "") {

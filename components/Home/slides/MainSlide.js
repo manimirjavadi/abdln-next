@@ -31,7 +31,7 @@ const gifVariant = {
   },
 };
 
-export const MainSlide = ({ animatorController }) => {
+export const MainSlide = ({ animatorController, text, title }) => {
   const controlsText = useAnimation();
   const controlsGif = useAnimation();
 
@@ -56,15 +56,11 @@ export const MainSlide = ({ animatorController }) => {
             transition={{ duration: 0.7, type: "spring" }}
             className="md:w-[80%] px-6 order-2 md:order-1 md:pr-4"
           >
-            <h1>عبداللهیان</h1>
-            <p className="mt-6 text-justify text-white">
-              لورم ایپسوم به معنای یه چیزی هست که نمی‌دانم. اما می‌دانم که این
-              چیزا چیز هستن. به امید خدا در حال نوشتن یه خزعبلاتیم تا اینجا رو
-              پر کنم. اهمیت پر کردن برای داشتن یک ادیت زیباست. اما هرچقدر
-              می‌نویسم به نظر کافی نیست. انشاءالله که بالاخره کافی باشد تا
-              بتوانیم به تست بهتر اپلیکیشن بپردازیم. امید است این روند سریع‌تر
-              به اتمام برسد تا ما روند تولید اپلیکیشن را افزایش بدهیم.
-            </p>
+            <h1>{title.rendered}</h1>
+            <div
+              className="slideDIV"
+              dangerouslySetInnerHTML={{ __html: text.rendered }}
+            ></div>
           </motion.div>
           <motion.div
             variants={gifVariant}
@@ -77,7 +73,7 @@ export const MainSlide = ({ animatorController }) => {
               <Image
                 priority
                 src={topGif}
-                alt="عبداللهیان"
+                alt={title.rendered}
                 layout="responsive"
               />
             </div>

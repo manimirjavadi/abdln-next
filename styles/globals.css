@@ -129,3 +129,7 @@ div.newsContainer p {
 .slideDIV p {
     @apply mt-6 text-justify text-white;
 }
+
+.newsDIV p {
+    
+}

@@ -53,6 +53,7 @@ export async function getPosts(limit = 100, page = "") {
   return posts;
 }
 
+// TEAMAN TO BE DELETED
 export async function getPost(slug) {
   const posts = await getPosts();
   const postArray = posts.filter((post) => decodeURI(post.slug) == slug);

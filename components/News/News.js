@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { NewsCard } from "./Fragments/NewsCard";
 import useWindowDimensions from "../../hooks/WindowsDimension";
 
-export const News = () => {
+export const News = ({ posts }) => {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -23,9 +23,9 @@ export const News = () => {
                 </Link>
               </div>
             </div>
-            <NewsCard />
-            {width > 768 && <NewsCard />}
-            {width > 768 && <NewsCard />}
+            {posts.length && <NewsCard theNews={posts[0]} />}
+            {width > 768 && posts.length && <NewsCard theNews={posts[1]} />}
+            {width > 768 && posts.length && <NewsCard theNews={posts[2]} />}
           </div>
         </div>
       </div>

@@ -48,7 +48,8 @@ export default function List({ banners, posts, totalPages, currentPage }) {
                 layout="fill"
                 objectFit="cover"
               />
-              <div className="absolute bottom-[10px] text-abdlOrange font-bold text-3xl px-4">
+              <div className="absolute bottom-[-14px] right-[-10px] w-[110%] h-24 bg-white blur-lg" />
+              <div className="absolute bottom-[10px] font-bold text-3xl px-4">
                 {firstBanner.title.rendered}
               </div>
             </div>
@@ -65,7 +66,8 @@ export default function List({ banners, posts, totalPages, currentPage }) {
                     layout="fill"
                     objectFit="cover"
                   />
-                  <div className="absolute bottom-[10px] text-abdlOrange font-bold text-3xl px-4">
+                  <div className="absolute bottom-[-14px] right-[-10px] w-[110%] h-24 bg-white blur-lg" />
+                  <div className="absolute bottom-[10px] font-bold text-2xl px-4">
                     {secondBanner.title.rendered}
                   </div>
                 </div>
@@ -82,7 +84,8 @@ export default function List({ banners, posts, totalPages, currentPage }) {
                     layout="fill"
                     objectFit="cover"
                   />
-                  <div className="absolute bottom-[10px] text-abdlOrange font-bold text-3xl px-4">
+                  <div className="absolute bottom-[-14px] right-[-10px] w-[110%] h-24 bg-white blur-lg" />
+                  <div className="absolute bottom-[10px] font-bold text-2xl px-4">
                     {thirdBanner.title.rendered}
                   </div>
                 </div>

@@ -59,6 +59,12 @@ export async function getVendors(limit = 100, page = "") {
   return vendors;
 }
 
+export async function getAboutus(limit = 1) {
+  const aboutusRes = await wpHttp("aboutus", limit);
+  const aboutus = await aboutusRes.json();
+  return aboutus;
+}
+
 // TEAMAN TO BE DELETED
 export async function getPost(slug) {
   const posts = await getPosts();
@@ -121,12 +127,6 @@ export async function getJob(limit = 1) {
   const jobRes = await wpHttp("jobs", limit);
   const job = await jobRes.json();
   return job;
-}
-
-export async function getAboutus(limit = 1) {
-  const aboutusRes = await wpHttp("aboutus", limit);
-  const aboutus = await aboutusRes.json();
-  return aboutus;
 }
 
 export async function getCategories(limit = 100) {

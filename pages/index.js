@@ -9,9 +9,9 @@ import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 import { News } from "../components/News/News";
 import { Footer } from "../components/Footer/Footer";
-import { getPosts, getSlides } from "../utils/wordpress";
+import { getPosts, getSlides, getVendors } from "../utils/wordpress";
 
-export default function Home({ slides, posts }) {
+export default function Home({ slides, posts, vendors }) {
   const [animateManufacturers, setAnimateManufacturers] = useState(false);
   const [hideHeader, setHideHeader] = useState(false);
 
@@ -66,7 +66,7 @@ export default function Home({ slides, posts }) {
               <News posts={posts} />
             </div>
             <div id="manufacturers" className="section">
-              <ManufacturersSection animatorController={animateManufacturers} />
+              <ManufacturersSection vendors={vendors} animatorController={animateManufacturers} />
             </div>
             <div id="footer" className="section">
               <Footer />
@@ -85,11 +85,13 @@ Home.getLayout = function getLayout(page) {
 export async function getStaticProps({ params }) {
   const slides = await getSlides(2);
   const posts = await getPosts(3);
+  const vendors = await getVendors(8);
 
   return {
     props: {
       slides,
       posts,
+      vendors
     },
     revalidate: 10,
   };

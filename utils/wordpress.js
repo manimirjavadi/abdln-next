@@ -33,7 +33,6 @@ export async function getSlides(limit = 2, page = "") {
   const slideRes = await wpHttp("slides", limit, page);
 
   const slides = await slideRes.json();
-  console.log(slides);
   return slides;
 }
 
@@ -51,6 +50,13 @@ export async function getPosts(limit = 100, page = "") {
   Object.assign(posts, { ...posts, totalPages: totalPages });
 
   return posts;
+}
+
+export async function getVendors(limit = 100, page = "") {
+  const vendorRes = await wpHttp("vendor", limit, page);
+
+  const vendors = await vendorRes.json();
+  return vendors;
 }
 
 // TEAMAN TO BE DELETED

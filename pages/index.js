@@ -9,8 +9,9 @@ import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 import { News } from "../components/News/News";
 import { Footer } from "../components/Footer/Footer";
+import { getPosts, getSlides, getVendors } from "../utils/wordpress";
 
-export default function Home() {
+export default function Home({ slides, posts, vendors }) {
   const [animateManufacturers, setAnimateManufacturers] = useState(false);
   const [hideHeader, setHideHeader] = useState(false);
 
@@ -53,7 +54,7 @@ export default function Home() {
         render={() => (
           <ReactFullpage.Wrapper>
             <div className="section">
-              <Intro />
+              <Intro slides={slides} />
             </div>
             <div className="section">
               <NormalProducts />
@@ -62,10 +63,10 @@ export default function Home() {
               <SpecialProducts />
             </div>
             <div className="section">
-              <News />
+              <News posts={posts} />
             </div>
             <div id="manufacturers" className="section">
-              <ManufacturersSection animatorController={animateManufacturers} />
+              <ManufacturersSection vendors={vendors} animatorController={animateManufacturers} />
             </div>
             <div id="footer" className="section">
               <Footer />
@@ -80,3 +81,18 @@ export default function Home() {
 Home.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
+
+export async function getStaticProps({ params }) {
+  const slides = await getSlides(2);
+  const posts = await getPosts(3);
+  const vendors = await getVendors(8);
+
+  return {
+    props: {
+      slides,
+      posts,
+      vendors
+    },
+    revalidate: 10,
+  };
+}

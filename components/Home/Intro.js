@@ -5,7 +5,7 @@ import { MainSlide } from "./slides/MainSlide";
 import { Molecule } from "./slides/Molecule";
 import { Video } from "./slides/Video";
 
-export const Intro = () => {
+export const Intro = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState("main");
   const [startMainAnimation, setStartMainAnimation] = useState(true);
   const [startMoleculeAnimation, setStartMoleculeAnimation] = useState(false);
@@ -42,9 +42,19 @@ export const Intro = () => {
         manageAnimation(event);
       }}
     >
-      <MainSlide id="main" animatorController={startMainAnimation} />
+      <MainSlide
+        id="main"
+        animatorController={startMainAnimation}
+        text={slides[1]?.content}
+        title={slides[0].title}
+      />
 
-      <Molecule id="molecule" animatorController={startMoleculeAnimation} />
+      <Molecule
+        id="molecule"
+        animatorController={startMoleculeAnimation}
+        text={slides[0]?.content}
+        title={slides[0].title}
+      />
 
       <Video id="video" animatorController={startVideoAnimation} />
     </Carousel>

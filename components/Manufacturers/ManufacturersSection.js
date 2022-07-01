@@ -41,9 +41,65 @@ const bottomListVariant = {
   },
 };
 
-export const ManufacturersSection = ({ animatorController }) => {
+export const ManufacturersSection = ({ animatorController, vendors }) => {
   const controlAnimation = useAnimation();
   const { height, width } = useWindowDimensions();
+
+  const jsxMobile = vendors.map((vendor) => {
+    let featuredMedia = vendor["_embedded"]["wp:featuredmedia"][0];
+
+    return (
+      <div key={vendor.id}>
+        <Link href={`/manufacturers/${vendor.slug}`} className="cursor-pointer">
+          <VendorLogo source={featuredMedia["source_url"]} />
+        </Link>
+      </div>
+    );
+  });
+
+  const jsxDesktopTop = vendors.slice(0, 4).map((vendor) => {
+    let featuredMedia = vendor["_embedded"]["wp:featuredmedia"][0];
+
+    return (
+      <Link
+        key={vendor.id}
+        href={`/manufacturers/${vendor.slug}`}
+        className="cursor-pointer"
+      >
+        <motion.div whileHover={{ scale: 1.2 }}>
+          <Image
+            alt="عبدالهیان"
+            src={featuredMedia["source_url"]}
+            height="200px"
+            width="200px"
+            objectFit="contain"
+          />
+        </motion.div>
+      </Link>
+    );
+  });
+
+  const jsxDesktopBottom = vendors.slice(4, 8).map((vendor) => {
+    let featuredMedia = vendor["_embedded"]["wp:featuredmedia"][0];
+
+    return (
+      <Link
+        key={vendor.id}
+        href={`/manufacturers/${vendor.slug}`}
+        className="cursor-pointer"
+      >
+        <motion.div whileHover={{ scale: 1.2 }}>
+          <Image
+            alt="عبدالهیان"
+            src={featuredMedia["source_url"]}
+            height="200px"
+            width="200px"
+            objectFit="contain"
+          />
+        </motion.div>
+      </Link>
+    );
+  });
 
   useEffect(() => {
     if (animatorController) {
@@ -62,17 +118,11 @@ export const ManufacturersSection = ({ animatorController }) => {
         >
           <div className="h-[150px] hidden md:block"></div>
           {/* Mobile View */}
-          <div className="grid grid-cols-3 gap-2 pt-24 md:hidden">
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-            <VendorLogo source="/tempImgs/celito.jpg" />
-          </div>
+          {width <= 768 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-24 md:hidden">
+              {jsxMobile}
+            </div>
+          )}
 
           {/* Desktop View */}
           <div className="pt-6 hidden md:block">
@@ -88,42 +138,7 @@ export const ManufacturersSection = ({ animatorController }) => {
               <div className="w-full">
                 <div className="h-[170px] bg-white rounded-[200px] overflow-hidden">
                   <div className="w-full grid grid-cols-4 place-items-center">
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/celito.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/celotech.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/cemotech.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/fenghung.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
+                    {jsxDesktopTop}
                   </div>
                 </div>
               </div>
@@ -137,47 +152,12 @@ export const ManufacturersSection = ({ animatorController }) => {
               <div className="w-full overflow-hidden">
                 <div className="h-[170px] bg-white rounded-[200px] overflow-hidden">
                   <div className="w-full grid grid-cols-4 place-items-center">
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/imerys.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/sh1.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/SHHxtc.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/1n.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
+                    {jsxDesktopBottom}
                   </div>
                 </div>
               </div>
               <div className="w-96 flex justify-end">
-                <Link href="./manufacturers">
+                <Link href="./manufacturers/list">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     className="text-white text-lg justify-end cursor-pointer hidden md:flex"

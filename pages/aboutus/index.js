@@ -1,8 +1,9 @@
 import React from "react";
 import AboutUsLayout from "../../components/layouts/aboutus-layout";
 import { motion } from "framer-motion";
+import { getAboutus } from "../../utils/wordpress";
 
-export default function AboutUs() {
+export default function AboutUs({ aboutus }) {
   const iconOrange = {
     hidden: {
       pathLength: 0,
@@ -100,37 +101,10 @@ export default function AboutUs() {
               />
             </svg>
           </div>
-          <div>
-            <p className="px-4 text-lg mt-10 text-justify">
-              بازرگانی عبدالهیان با بیش از سیزده سال تجربه در حوزه واردات مواد
-              شیمیایی توانسته یکی از مهم‌ترین واردکنندگان کشور در بین
-              تامین‌کنندگان مواد اولیه صنایع مختلف باشد. بازرگانی عبدالهیان
-              همواره در تلاش بوده تا با تیمی متشکل از مدیران موفق این صنعت و
-              جوانان نخبه همه جوانب این صنعت را مورد توجه قرار دهد. ما در تیم
-              بازرگانی عبدالهیان با درنظر گرفتن تمامی جوانب سعی در ارتقا سطح
-              تجارت مواد اولیه داریم تا در کوتاه‌ترین زمان بهترین کالا با
-              بالاترین کیفیت را در اختیار مشتریان خود قرار دهیم و در مسیر پیشرفت
-              روابط، پشتیبانی همه جانبه از آن ها به عمل بیاوریم. هدف ما در این
-              مجموعه ارتقا استانداردها در ارائه خدمات بازرگانی و تامین مواد
-              اولیه صنایع مختلف است. ما «گروه بازرگانی عبدالهیان» با هدف تامین
-              به موقع کالای با کیفیت برای مشتریان از سال ۱۳۷۴ فعالیت خود را در
-              زمینه واردات و پخش قطعات الکترونیکی و صنعتی آغاز کردیم. از سال
-              ۱۳۷۹ حوزه فعالیت‌مان را با واردات خاک‌های صنعتی از Celite محصول
-              شرکت World Minerals در زمینه مواد معدنی و شیمیایی گسترش دادیم. سال
-              ۱۳۸۷ متمرکز‌تر و تخصصی در زمینه افزودنی‌های کمک تصفیه و ضد رسوب هم
-              وارد شدیم و در حال حاضر نماینده شرکت‌های زیر در ایران هستیم:
-              شرکت‌های بین‌المللی Hudson شرکت Imerys فرانسه شرکت Skywalker شرکت
-              Shanghai Activated Carbon شرکت Shengyang Mehco شرکت Celotech شرکت
-              Fenghong بیشتر مشتریان ما صنایع روغن نباتی، کارخانه‌های تولید
-              نوشیدنی‌ و مواد غذایی، صنایع رنگ و پوشش‌های صنعتی و تولیدکنندگان
-              انواع ملات‌های ساختمانی هستند. ما همواره تلاش می‌کنیم تا
-              استانداردهای کیفیت مواد مصرفی را بهبود ببخشیم و تجربه‌ای در کلاس
-              جهانی به مشتریان‌شمان ارائه دهیم. به همین منظور در تلاشیم تا با
-              وجود موانع و سختی های این راه با بهترین تامین کنندگان دنیا در
-              تعامل باشیم و بهترین مواد اولیه را از سراسر دنیا برای صنایع داخلی
-              فراهم آوریم.
-            </p>
-          </div>
+          <div
+            className="aboutusDIV"
+            dangerouslySetInnerHTML={{ __html: aboutus.content.rendered }}
+          ></div>
         </div>
       </div>
     </main>
@@ -140,3 +114,15 @@ export default function AboutUs() {
 AboutUs.getLayout = function getLayout(page) {
   return <AboutUsLayout>{page}</AboutUsLayout>;
 };
+
+export async function getStaticProps({ params }) {
+  const aboutusArray = await getAboutus(1);
+  const aboutus = aboutusArray[0];
+
+  return {
+    props: {
+      aboutus,
+    },
+    revalidate: 10,
+  };
+}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { NewsCard } from "./Fragments/NewsCard";
 import useWindowDimensions from "../../hooks/WindowsDimension";
 
-export const News = () => {
+export const News = ({ posts }) => {
   const { height, width } = useWindowDimensions();
 
   return (
@@ -18,14 +18,32 @@ export const News = () => {
                 <h2 className="text-white">اخبار</h2>
               </div>
               <div className="cursor-pointer">
-                <Link href="./products">
+                <Link href="./news/list/1">
                   <span className="text-white text-lg">مشاهده همه خبر‌ها</span>
                 </Link>
               </div>
             </div>
-            <NewsCard />
-            {width > 768 && <NewsCard />}
-            {width > 768 && <NewsCard />}
+            {posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[0].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[0]} />
+                </div>
+              </Link>
+            )}
+            {width > 768 && posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[1].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[1]} />
+                </div>
+              </Link>
+            )}
+            {width > 768 && posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[2].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[2]} />
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>

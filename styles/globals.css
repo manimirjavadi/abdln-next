@@ -125,3 +125,27 @@ p {
 div.newsContainer p {
     @apply mt-4 text-justify;
 }
+
+.slideDIV p {
+    @apply mt-6 text-justify text-white;
+}
+
+.newsDIV p {
+    @apply mt-6 text-justify text-black;
+}
+
+.aboutusDIV p ul {
+    @apply px-4 text-lg mt-10 text-justify;
+}
+
+.paginationButton {
+    @apply h-8 w-8 pt-1 border-2 border-abdlBlue rounded-lg bg-abdlBlue text-white;
+}
+
+.paginationButton:hover {
+    @apply text-abdlBlue bg-white duration-200;
+}
+
+.paginateActive {
+    @apply bg-white text-abdlBlue;
+}

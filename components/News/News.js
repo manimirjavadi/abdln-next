@@ -23,9 +23,27 @@ export const News = ({ posts }) => {
                 </Link>
               </div>
             </div>
-            {posts.length && <NewsCard theNews={posts[0]} />}
-            {width > 768 && posts.length && <NewsCard theNews={posts[1]} />}
-            {width > 768 && posts.length && <NewsCard theNews={posts[2]} />}
+            {posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[0].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[0]} />
+                </div>
+              </Link>
+            )}
+            {width > 768 && posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[1].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[1]} />
+                </div>
+              </Link>
+            )}
+            {width > 768 && posts.length && (
+              <Link className="cursor-pointer" href={`/news/${posts[2].slug}`}>
+                <div>
+                  <NewsCard theNews={posts[2]} />
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       </div>

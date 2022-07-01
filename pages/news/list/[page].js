@@ -11,7 +11,7 @@ export default function List({ banners, posts, totalPages, currentPage }) {
   const router = useRouter();
   const jsxNews = posts.map((post) => {
     return (
-      <Link key={post.id} href={"/news/something"}>
+      <Link key={post.id} href={`/news/${post.slug}`}>
         <div>
           <NewsCard theNews={post} />
         </div>
@@ -39,7 +39,7 @@ export default function List({ banners, posts, totalPages, currentPage }) {
         {/* Banner */}
         <div className="min-h-[400px] w-full md:grid grid-cols-5 mt-4 hidden">
           {/* Main Card */}
-          <Link href={"/news/firstSlide"}>
+          <Link href={`/news/${firstBanner.slug}`}>
             <div className="h-full w-full col-span-3 relative cursor-pointer rounded-r-3xl overflow-hidden">
               <Image
                 className="hover:blur-sm duration-200"
@@ -57,7 +57,7 @@ export default function List({ banners, posts, totalPages, currentPage }) {
           <div className="grid col-span-2 grid-rows-2">
             <div className="row-span-1">
               {/* New Card  TODO: Links */}
-              <Link href={"/news/firstSlide"}>
+              <Link href={`/news/${secondBanner.slug}`}>
                 <div className="h-full w-full relative cursor-pointer rounded-tl-3xl overflow-hidden">
                   <Image
                     className="hover:blur-sm duration-200"
@@ -75,7 +75,7 @@ export default function List({ banners, posts, totalPages, currentPage }) {
             </div>
             <div className="row-span-1">
               {/* New Card */}
-              <Link href={"/news/firstSlide"}>
+              <Link href={`/news/${thirdBanner.slug}`}>
                 <div className="h-full w-full relative cursor-pointer rounded-bl-3xl overflow-hidden">
                   <Image
                     className="hover:blur-sm duration-200"

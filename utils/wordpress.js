@@ -86,6 +86,27 @@ export async function getPages(type) {
   return pages;
 }
 
+export async function getSlugs(type) {
+  let elements = [];
+  switch (type) {
+    case "posts":
+      elements = await getPosts();
+      break;
+    case "products":
+      elements = await getProducts();
+      break;
+  }
+
+  const elementIds = elements.map((element) => {
+    return {
+      params: {
+        slug: decodeURI(element.slug),
+      },
+    };
+  });
+  return elementIds;
+}
+
 // TEAMAN TO BE DELETED
 export async function getPost(slug) {
   const posts = await getPosts();
@@ -170,26 +191,3 @@ export async function getBrands(limit = 100) {
 
   return brands;
 }
-
-export async function getSlugs(type) {
-  let elements = [];
-  switch (type) {
-    case "posts":
-      elements = await getPosts();
-      break;
-    case "products":
-      elements = await getProducts();
-      break;
-  }
-
-  const elementIds = elements.map((element) => {
-    return {
-      params: {
-        slug: decodeURI(element.slug),
-      },
-    };
-  });
-  return elementIds;
-}
-
-

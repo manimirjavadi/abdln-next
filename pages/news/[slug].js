@@ -4,6 +4,7 @@ import { getPost, getSlugs } from "../../utils/wordpress";
 
 export default function SingleNews({ post }) {
   const featuredmedia = post["_embedded"]["wp:featuredmedia"][0];
+
   return (
     <main className="max-w-5xl mx-auto px-4 md:px-0 py-10">
       <div className="bg-white rounded-3xl">

@@ -9,7 +9,7 @@ export default function List({ vendors }) {
 
     return (
       <div key={vendor.id}>
-        <Link href="/manufacturers/test">
+        <Link className="cursor-pointer" href={`/manufacturers/${vendor.slug}`}>
           <div className="h-32 w-full relative cursor-pointer hover:scale-105 duration-200">
             <Image
               src={featuredMedia["source_url"]}

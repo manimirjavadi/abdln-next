@@ -59,6 +59,16 @@ export async function getVendors(limit = 100, page = "") {
   return vendors;
 }
 
+export async function getVendor(slug) {
+  const vendors = await getVendors();
+  const vendorArray = vendors.filter(
+    (vendor) => decodeURI(vendor.slug) == slug
+  );
+
+  const vendor = vendorArray.length > 0 ? vendorArray[0] : null;
+  return vendor;
+}
+
 export async function getAboutus(limit = 1) {
   const aboutusRes = await wpHttp("aboutus", limit);
   const aboutus = await aboutusRes.json();
@@ -71,6 +81,9 @@ export async function getPages(type) {
   switch (type) {
     case "posts":
       elements = await getPosts();
+      break;
+    case "vendors":
+      elements = await getVendors();
       break;
   }
 
@@ -86,11 +99,22 @@ export async function getPages(type) {
   return pages;
 }
 
+export async function getPost(slug) {
+  const posts = await getPosts();
+  const postArray = posts.filter((post) => decodeURI(post.slug) == slug);
+
+  const post = postArray.length > 0 ? postArray[0] : null;
+  return post;
+}
+
 export async function getSlugs(type) {
   let elements = [];
   switch (type) {
     case "posts":
       elements = await getPosts();
+      break;
+    case "vendors":
+      elements = await getVendors();
       break;
     case "products":
       elements = await getProducts();
@@ -108,14 +132,6 @@ export async function getSlugs(type) {
 }
 
 // TEAMAN TO BE DELETED
-export async function getPost(slug) {
-  const posts = await getPosts();
-  const postArray = posts.filter((post) => decodeURI(post.slug) == slug);
-
-  const post = postArray.length > 0 ? postArray[0] : null;
-  return post;
-}
-
 export async function getProducts(
   limit = 100,
   page = "",

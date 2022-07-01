@@ -50,7 +50,7 @@ export const ManufacturersSection = ({ animatorController, vendors }) => {
 
     return (
       <div key={vendor.id}>
-        <Link href={`/manufacturers/test`} className="cursor-pointer">
+        <Link href={`/manufacturers/${vendor.slug}`} className="cursor-pointer">
           <VendorLogo source={featuredMedia["source_url"]} />
         </Link>
       </div>
@@ -63,7 +63,7 @@ export const ManufacturersSection = ({ animatorController, vendors }) => {
     return (
       <Link
         key={vendor.id}
-        href={`/manufacturers/test`}
+        href={`/manufacturers/${vendor.slug}`}
         className="cursor-pointer"
       >
         <motion.div whileHover={{ scale: 1.2 }}>
@@ -85,7 +85,7 @@ export const ManufacturersSection = ({ animatorController, vendors }) => {
     return (
       <Link
         key={vendor.id}
-        href={`/manufacturers/test`}
+        href={`/manufacturers/${vendor.slug}`}
         className="cursor-pointer"
       >
         <motion.div whileHover={{ scale: 1.2 }}>
@@ -152,42 +152,7 @@ export const ManufacturersSection = ({ animatorController, vendors }) => {
               <div className="w-full overflow-hidden">
                 <div className="h-[170px] bg-white rounded-[200px] overflow-hidden">
                   <div className="w-full grid grid-cols-4 place-items-center">
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/imerys.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/sh1.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/SHHxtc.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.2 }}>
-                      <Image
-                        alt="عبداللهیان"
-                        src="/tempImgs/1n.jpg"
-                        height="200px"
-                        width="200px"
-                        objectFit="contain"
-                      />
-                    </motion.div>
+                    {jsxDesktopBottom}
                   </div>
                 </div>
               </div>

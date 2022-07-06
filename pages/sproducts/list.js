@@ -23,7 +23,7 @@ export default function SProducts({
 
   useEffect(() => {
     setLoading(true);
-    let url = `http://localhost/abdln/wp-json/wp/v2/cosmetics?per_page=12&_embed&acf_format=standard&page${page}`;
+    let url = `https://wp.manimirjavadi.info/wp-json/wp/v2/cosmetics?per_page=12&_embed&acf_format=standard&page${page}`;
 
     if (selectedCategory !== "") {
       url += `&cosmetic_categories=${selectedCategory}`;

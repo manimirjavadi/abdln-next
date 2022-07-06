@@ -11,7 +11,7 @@ export default function SProducts({
   categories,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [page, setPage] = useState(false);
+  const [page, setPage] = useState(currentPage);
   const [totalPage, setTotalPage] = useState(totalPages);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +23,7 @@ export default function SProducts({
 
   useEffect(() => {
     setLoading(true);
-    let url = `https://wp.manimirjavadi.info/wp-json/wp/v2/cosmetics?per_page=12&_embed&acf_format=standard&page${page}`;
+    let url = `https://wp.manimirjavadi.info/wp-json/wp/v2/cosmetics?per_page=6&_embed&acf_format=standard&page=${page}`;
 
     if (selectedCategory !== "") {
       url += `&cosmetic_categories=${selectedCategory}`;
@@ -90,7 +90,7 @@ export default function SProducts({
           <div className="col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4 px-2 md:px-6">
             {jsxCosmetics}
             {loading && (
-              <div className="absolute inset-0 flex justify-center items-center z-50 bg-gray-400/60 rounded-2xl">
+              <div className="absolute h-[2000px] inset-0 flex justify-center items-center z-50 bg-gray-400/60 rounded-2xl">
                 <svg
                   width="100"
                   height="100"
@@ -148,7 +148,7 @@ export default function SProducts({
             )}
             <div className="w-full col-span-full">
               <Pagination
-                totalPages={parseInt(totalPage)}
+                totalPages={+totalPage}
                 currentPage={page.toString()}
                 onPageClick={handlePage}
               />
@@ -165,7 +165,7 @@ SProducts.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ params }) {
-  const cosmetics = await getCosmetics(12, 1);
+  const cosmetics = await getCosmetics(6, 1);
   const totalPages = cosmetics.totalPages;
   const currentPage = 1;
   const categories = await getCosmeticCategories(100);
@@ -177,5 +177,6 @@ export async function getStaticProps({ params }) {
       currentPage,
       categories,
     },
+    revalidate: 10,
   };
 }

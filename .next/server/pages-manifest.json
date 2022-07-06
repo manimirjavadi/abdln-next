@@ -1,0 +1,14 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/api/hello": "pages/api/hello.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/manufacturers/list": "pages/manufacturers/list.js",
+  "/aboutus": "pages/aboutus.js",
+  "/news/[slug]": "pages/news/[slug].js",
+  "/news/list/[page]": "pages/news/list/[page].js",
+  "/manufacturers/[slug]": "pages/manufacturers/[slug].js",
+  "/sproducts/list": "pages/sproducts/list.js",
+  "/404": "pages/404.html"
+}

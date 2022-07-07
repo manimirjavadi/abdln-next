@@ -6,6 +6,8 @@ export async function wpHttp(
   page = "",
   p_category = "",
   c_category = "",
+  p_vendor = "",
+  industry = "",
   brand = "",
   search = "",
   lang = "fa"
@@ -19,6 +21,12 @@ export async function wpHttp(
   }
   if (c_category) {
     url += `&c_category=${c_category}`;
+  }
+  if (p_vendor) {
+    url += `&pvendor=${p_vendor}`;
+  }
+  if (industry) {
+    url += `&industry=${industry}`;
   }
   if (brand) {
     url += `&brand=${brand}`;
@@ -158,79 +166,49 @@ export async function getCosmeticCategories(limit = 100) {
   return categories;
 }
 
-// TEAMAN TO BE DELETED
 export async function getProducts(
   limit = 100,
   page = "",
-  p_category = "",
-  brand = "",
-  search = ""
+  p_vendor = "",
+  industry = "",
+  lang = "fa"
 ) {
-  const productsRes = await wpHttp("products", limit, page, p_category, brand);
+  const productRes = await wpHttp(
+    "product",
+    limit,
+    page,
+    "",
+    "",
+    p_vendor,
+    industry,
+    "",
+    "",
+    "fa"
+  );
   let totalPages = 1;
 
-  for (let pair of productsRes.headers.entries()) {
+  for (let pair of productRes.headers.entries()) {
     if (pair[0] === "x-wp-totalpages") {
       totalPages = pair[1];
     }
   }
 
-  const products = await productsRes.json();
+  const products = await productRes.json();
   Object.assign(products, { ...products, totalPages: totalPages });
 
   return products;
 }
 
-export async function getProduct(slug) {
-  const products = await getProducts();
-  const productArray = products.filter(
-    (product) => decodeURI(product.slug) == slug
-  );
-  const product = productArray.length > 0 ? productArray[0] : null;
-  return product;
+export async function getPVendors(limit = 100) {
+  const vendorRes = await wpHttp("pvendor", limit);
+  const vendors = await vendorRes.json();
+
+  return vendors;
 }
 
-export async function getReps(limit = 100) {
-  const repsRes = await wpHttp("reps", limit);
-  const reps = await repsRes.json();
-  return reps;
-}
+export async function getIndustries(limit = 100) {
+  const industryRes = await wpHttp("industry", limit);
+  const industries = await industryRes.json();
 
-export async function getSubs(limit = 100) {
-  const subsRes = await wpHttp("subs", limit);
-  const subs = await subsRes.json();
-  return subs;
-}
-
-export async function getTop(limit = 1) {
-  const topRes = await wpHttp("top", limit);
-  const top = await topRes.json();
-  return top;
-}
-
-export async function getJob(limit = 1) {
-  const jobRes = await wpHttp("jobs", limit);
-  const job = await jobRes.json();
-  return job;
-}
-
-export async function getCategories(limit = 100) {
-  const categoriesRes = await wpHttp("categories", limit);
-  const categories = await categoriesRes.json();
-
-  return categories;
-}
-
-export async function getPCategories(limit = 100) {
-  const categoriesRes = await wpHttp("p_category", limit);
-  const categories = await categoriesRes.json();
-
-  return categories;
-}
-
-export async function getBrands(limit = 100) {
-  const brandsRes = await wpHttp("brand", limit);
-  const brands = await brandsRes.json();
-
-  return brands;
+  return industries;
 }

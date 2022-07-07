@@ -199,6 +199,14 @@ export async function getProducts(
   return products;
 }
 
+export async function getProduct(slug) {
+  const products = await getProducts();
+  const productsArray = products.filter((p) => decodeURI(p.slug) == slug);
+
+  const product = productsArray.length > 0 ? productsArray[0] : null;
+  return product;
+}
+
 export async function getPVendors(limit = 100) {
   const vendorRes = await wpHttp("pvendor", limit);
   const vendors = await vendorRes.json();
@@ -206,9 +214,23 @@ export async function getPVendors(limit = 100) {
   return vendors;
 }
 
+export async function getPvendor(id) {
+  const pvendorRes = await wpHttp(`pvendor/${id}`);
+  const pvendor = await pvendorRes.json();
+
+  return pvendor;
+}
+
 export async function getIndustries(limit = 100) {
   const industryRes = await wpHttp("industry", limit);
   const industries = await industryRes.json();
 
   return industries;
+}
+
+export async function getIndustry(id) {
+  const industryRes = await wpHttp(`industry/${id}`);
+  const industry = await industryRes.json();
+
+  return industry;
 }

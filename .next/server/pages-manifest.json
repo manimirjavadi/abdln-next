@@ -7,9 +7,10 @@
   "/manufacturers/list": "pages/manufacturers/list.js",
   "/news/[slug]": "pages/news/[slug].js",
   "/news/list/[page]": "pages/news/list/[page].js",
-  "/nproducts/list": "pages/nproducts/list.js",
-  "/sproducts/list": "pages/sproducts/list.js",
+  "/nproducts/[slug]": "pages/nproducts/[slug].js",
   "/aboutus": "pages/aboutus.js",
+  "/sproducts/list": "pages/sproducts/list.js",
   "/_document": "pages/_document.js",
+  "/nproducts/list": "pages/nproducts/list.js",
   "/404": "pages/404.html"
 }

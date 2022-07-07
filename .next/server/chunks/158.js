@@ -277,9 +277,10 @@ const TIcon = ({ children , className , width , height  })=>{
 /* harmony export */   "dH": () => (/* binding */ getVendors),
 /* harmony export */   "fL": () => (/* binding */ getAboutus),
 /* harmony export */   "wZ": () => (/* binding */ getVendor),
+/* harmony export */   "wv": () => (/* binding */ getProduct),
 /* harmony export */   "xl": () => (/* binding */ getPost)
 /* harmony export */ });
-/* unused harmony export wpHttp */
+/* unused harmony exports wpHttp, getPvendor, getIndustry */
 const BASE_URL = process.env.BASE_URL;
 async function wpHttp(REQUEST, limit = 100, page = "", p_category = "", c_category = "", p_vendor = "", industry = "", brand = "", search = "", lang = "fa") {
     let url = `${BASE_URL}/${REQUEST}?per_page=${limit}&_embed&acf_format=standard`;
@@ -431,15 +432,32 @@ async function getProducts(limit = 100, page = "", p_vendor = "", industry = "",
     });
     return products;
 }
+async function getProduct(slug) {
+    const products = await getProducts();
+    const productsArray = products.filter((p)=>decodeURI(p.slug) == slug
+    );
+    const product = productsArray.length > 0 ? productsArray[0] : null;
+    return product;
+}
 async function getPVendors(limit = 100) {
     const vendorRes = await wpHttp("pvendor", limit);
     const vendors = await vendorRes.json();
     return vendors;
 }
+async function getPvendor(id) {
+    const pvendorRes = await wpHttp(`pvendor/${id}`);
+    const pvendor = await pvendorRes.json();
+    return pvendor;
+}
 async function getIndustries(limit = 100) {
     const industryRes = await wpHttp("industry", limit);
     const industries = await industryRes.json();
     return industries;
+}
+async function getIndustry(id) {
+    const industryRes = await wpHttp(`industry/${id}`);
+    const industry = await industryRes.json();
+    return industry;
 }
 
 

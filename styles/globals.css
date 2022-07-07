@@ -74,6 +74,11 @@ a {
     @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
 }
 
+.NormalProductCard {
+    @apply bg-white rounded-2xl bg-cover overflow-hidden;
+}
+
+
 .newsCard {
     @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
 }
@@ -148,4 +153,17 @@ div.newsContainer p {
 
 .paginateActive {
     @apply bg-white text-abdlBlue;
+}
+
+.singleProduct {
+    @apply text-black;
+}
+
+.singleProduct h1,h2,h3,h4,h5,h6 {
+    margin-top: 1rem;
+    color: black !important;
+}
+
+.singleProduct p {
+    margin-top: 0.5rem;
 }

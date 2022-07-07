@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/dist/client/link";
 
 export const NormalProduct = ({ product }) => {
   let featuredMedia;
@@ -8,8 +9,8 @@ export const NormalProduct = ({ product }) => {
   }
 
   return (
-    <>
-      <div className="productCard shadow-lg hover:shadow-2xl duration-300 cursor-pointer">
+    <Link href={`/nproducts/${product.slug}`}>
+      <div className="NormalProductCard shadow-lg hover:shadow-2xl duration-300 cursor-pointer">
         {/* Product Image */}
         <div className="p-5 w-full flex justify-center">
           {product && (
@@ -23,15 +24,9 @@ export const NormalProduct = ({ product }) => {
         </div>
         {/* Product Title */}
         <div className="p-5">
-          <h4 className="text-black">{product?.title?.rendered}</h4>
+          <h6 className="text-black">{product?.title?.rendered}</h6>
         </div>
-
-        {/* Product description */}
-        <div
-          className="text-black line-clamp-2 px-5"
-          dangerouslySetInnerHTML={{ __html: product?.content?.rendered }}
-        ></div>
       </div>
-    </>
+    </Link>
   );
 };

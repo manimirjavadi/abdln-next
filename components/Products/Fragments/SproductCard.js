@@ -4,9 +4,11 @@ import AttrIcons from "../../../components/icons/AttrIcons";
 export const SproductCard = ({ cosmetic }) => {
   const jsxIcons = cosmetic.acf.cosmetic_attributes.map((attr) => {
     return (
-      <AttrIcons height={40} width={40} key={attr}>
-        {attr}
-      </AttrIcons>
+      <span key={attr.value} title={attr.label} className="cursor-pointer">
+        <AttrIcons height={40} width={40}>
+          {attr.value}
+        </AttrIcons>
+      </span>
     );
   });
   return (

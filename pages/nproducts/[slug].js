@@ -2,24 +2,56 @@ import Image from "next/image";
 import Link from "next/dist/client/link";
 import Layout from "../../components/layouts/aboutus-layout";
 import { getProduct, getSlugs } from "../../utils/wordpress";
+import { useState } from "react";
 
 export default function SingleProduct({ product }) {
   const featuredmedia = product["_embedded"]["wp:featuredmedia"][0];
+  const [selectedTab, setSelectedTab] = useState(product.acf?.grades[0] ?? "");
+
   let jsxIndustries;
   let jsxManufacturers;
+  let jsxTabs;
 
   if (product.acf.industries) {
     jsxIndustries = product.acf?.industries?.map((ind) => {
-      return <div key={ind.term_id}>{ind.name}</div>;
+      return <span key={ind.term_id}> {ind.name}،</span>;
     });
   }
 
-  if (product.acf.manufacturers) {
+  if (product.acf.vendor) {
     jsxManufacturers = product.acf?.vendor?.map((m) => {
       return (
         <Link key={m.ID} href={`/manufacturers/${m.post_name}`}>
-          <div className="cursor-pointer">{m.post_title}</div>
+          <span className="cursor-pointer">{m.post_title}، </span>
         </Link>
+      );
+    });
+  }
+
+  if (product.acf.grades) {
+    jsxTabs = product.acf?.grades?.map((g) => {
+      return (
+        <li
+          key={g.categories}
+          className={`bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px ${
+            g.categories === selectedTab.categories ? "" : "border-b"
+          }`}
+        >
+          <a
+            onClick={() => {
+              setSelectedTab(g);
+              console.log(g);
+            }}
+            className={`cursor-pointer ${
+              g.categories === selectedTab.categories
+                ? "text-abdlOrange"
+                : "text-abdlBlue"
+            }`}
+            id="default-tab"
+          >
+            {g.categories}
+          </a>
+        </li>
       );
     });
   }
@@ -27,39 +59,73 @@ export default function SingleProduct({ product }) {
   return (
     <main className="max-w-5xl mx-auto px-4 md:px-0 py-10">
       <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
-        <div className="relative w-full h-[300px]">
-          <Image
-            alt={product.title.rendered}
-            src={featuredmedia["source_url"]}
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
         <div>
           <div className="px-8 pt-6 pb-2">
             <h1 className="text-2xl text-black">{product.title.rendered}</h1>
           </div>
-          <div className="pt-10">
-            <span className="text-abdlOrange mt-10 text-lg font-bold">
+          <div className="pr-10">
+            <span className="text-abdlOrange text-lg font-bold">
               دسته‌بندی:
             </span>
-            <div className="mt-2">{jsxIndustries}</div>
+            {jsxIndustries}
           </div>
-          <div className="pt-10">
-            <span className="text-abdlOrange mt-10 text-lg font-bold">
+          <div className="pr-10">
+            <span className="text-abdlOrange text-lg font-bold">
               تامین‌کنندگان:
             </span>
-            <div className="mt-2">{jsxManufacturers}</div>
+            {jsxManufacturers}
+          </div>
+          <div className="relative w-full h-[300px]">
+            <Image
+              alt={product.title.rendered}
+              src={featuredmedia["source_url"]}
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+        <div className="pl-6">
+          <div className="w-full">
+            <h5>
+              {product.title.rendered} <span> </span> در دیگر صنایع
+            </h5>
+          </div>
+          <div className="rounded border w-full h-full mx-auto mt-4">
+            <ul id="tabs" className="inline-flex pt-2 px-1 w-full border-b">
+              {jsxTabs}
+            </ul>
+
+            <div id="tab-contents">
+              <div className="p-4">
+                <table className="w-full">
+                  <thead className="h-[60px]">
+                    <tr>
+                      <th className="text-xl">
+                        <span> گرید‌ها در صنعت </span>
+                        <span className="text-abdlOrange">
+                          {selectedTab.categories}
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedTab?.grades?.map((g) => {
+                      return (
+                        <tr key={g.theGrade} className="text-center">
+                          <td className="text-lg">{g.theGrade}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
         <div
           className="singleProduct px-8 pt-6 pb-2 col-span-full"
           dangerouslySetInnerHTML={{ __html: product.content.rendered }}
         ></div>
-      </div>
-
-      <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4 mt-10">
-        <div className="relative w-full h-[300px]"></div>
       </div>
     </main>
   );

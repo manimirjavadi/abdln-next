@@ -2,15 +2,15 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/api/hello": "pages/api/hello.js",
+  "/aboutus": "pages/aboutus.js",
   "/": "pages/index.js",
   "/manufacturers/[slug]": "pages/manufacturers/[slug].js",
   "/manufacturers/list": "pages/manufacturers/list.js",
   "/news/[slug]": "pages/news/[slug].js",
   "/news/list/[page]": "pages/news/list/[page].js",
   "/nproducts/[slug]": "pages/nproducts/[slug].js",
-  "/aboutus": "pages/aboutus.js",
+  "/nproducts/list": "pages/nproducts/list.js",
   "/sproducts/list": "pages/sproducts/list.js",
   "/_document": "pages/_document.js",
-  "/nproducts/list": "pages/nproducts/list.js",
   "/404": "pages/404.html"
 }

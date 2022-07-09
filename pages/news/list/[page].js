@@ -28,7 +28,7 @@ export default function List({ banners, posts, totalPages, currentPage }) {
   const featuredMedia3 = thirdBanner["_embedded"]["wp:featuredmedia"][0];
 
   const handlePage = (e) => {
-    router.push(`/news/${e.target.value}`);
+    router.push(`/news/list/${e.target.value}`);
   };
 
   return (
@@ -128,8 +128,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const banners = await getPosts(3);
-  const posts = await getPosts(20, params.page);
+  const banners = await getPosts(8);
+  const posts = await getPosts(1, params.page);
   const totalPages = posts.totalPages;
   const currentPage = params.page;
 

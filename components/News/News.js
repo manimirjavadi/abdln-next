@@ -15,7 +15,7 @@ export const News = ({ posts }) => {
             <div className="h-[150px]"></div>
             <div className="flex justify-between col-span-3">
               <div>
-                <h2 className="text-white">اخبار</h2>
+                <span className="text-white text-3xl font-bold">اخبار</span>
               </div>
               <div className="cursor-pointer">
                 <Link href="./news/list/1">

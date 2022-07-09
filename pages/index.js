@@ -9,9 +9,21 @@ import { SpecialProducts } from "../components/Products/SpecialProducts";
 import { ManufacturersSection } from "../components/Manufacturers/ManufacturersSection";
 import { News } from "../components/News/News";
 import { Footer } from "../components/Footer/Footer";
-import { getPosts, getSlides, getVendors } from "../utils/wordpress";
+import {
+  getCosmetics,
+  getPosts,
+  getProducts,
+  getSlides,
+  getVendors,
+} from "../utils/wordpress";
 
-export default function Home({ slides, posts, vendors }) {
+export default function Home({
+  slides,
+  posts,
+  vendors,
+  normalProducts,
+  specialProducts,
+}) {
   const [animateManufacturers, setAnimateManufacturers] = useState(false);
   const [hideHeader, setHideHeader] = useState(false);
 
@@ -57,16 +69,19 @@ export default function Home({ slides, posts, vendors }) {
               <Intro slides={slides} />
             </div>
             <div className="section">
-              <NormalProducts />
+              <NormalProducts products={normalProducts} />
             </div>
             <div className="section">
-              <SpecialProducts />
+              <SpecialProducts products={specialProducts} />
             </div>
             <div className="section">
               <News posts={posts} />
             </div>
             <div id="manufacturers" className="section">
-              <ManufacturersSection vendors={vendors} animatorController={animateManufacturers} />
+              <ManufacturersSection
+                vendors={vendors}
+                animatorController={animateManufacturers}
+              />
             </div>
             <div id="footer" className="section">
               <Footer />
@@ -86,12 +101,16 @@ export async function getStaticProps({ params }) {
   const slides = await getSlides(2);
   const posts = await getPosts(3);
   const vendors = await getVendors(8);
+  const normalProducts = await getProducts(3);
+  const specialProducts = await getCosmetics(2, 1);
 
   return {
     props: {
       slides,
       posts,
-      vendors
+      vendors,
+      normalProducts,
+      specialProducts,
     },
     revalidate: 10,
   };

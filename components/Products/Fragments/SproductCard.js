@@ -12,7 +12,7 @@ export const SproductCard = ({ cosmetic }) => {
     );
   });
   return (
-    <div className="h-[360px] border-l-[10px] border-abdlOrange rounded-lg bg-white px-6 py-4 relative">
+    <div className="min-h-[360px] pb-[60px] border-l-[10px] border-abdlOrange rounded-lg bg-white px-6 py-4 relative">
       <h5 className="text-black">{cosmetic.title.rendered}</h5>
       {/* Inci Name */}
       <div className="w-full mt-3">
@@ -22,29 +22,50 @@ export const SproductCard = ({ cosmetic }) => {
         </span>
       </div>
       {/* Application */}
-      <div className="w-full mt-3">
-        <span className="text-gray-700 text-sm font-bold">Application: </span>
-        <span className="text-gray-500 text-sm font-thin">
-          {cosmetic.acf.application}
-        </span>
-      </div>
+      {cosmetic.acf.application && (
+        <div className="w-full mt-3">
+          <span className="text-gray-700 text-sm font-bold">Application: </span>
+          <span className="text-gray-500 text-sm font-thin">
+            {cosmetic.acf.application}
+          </span>
+        </div>
+      )}
       {/* Recommended */}
-      <div className="w-full mt-3">
-        <span className="text-gray-700 text-sm font-bold">
-          Recommended Use Level:{" "}
-        </span>
-        <span className="text-gray-500 text-sm font-thin">
-          {cosmetic.acf.recommended_use_level}
-        </span>
-      </div>
+      {cosmetic.acf.recommended_use_level && (
+        <div className="w-full mt-3">
+          <span className="text-gray-700 text-sm font-bold">
+            Recommended Use Level:{" "}
+          </span>
+          <span className="text-gray-500 text-sm font-thin">
+            {cosmetic.acf.recommended_use_level}
+          </span>
+        </div>
+      )}
 
       {/* Solubility */}
-      <div className="w-full mt-3">
-        <span className="text-gray-700 text-sm font-bold">Solubility: </span>
-        <span className="text-gray-500 text-sm font-thin">
-          {cosmetic.acf.solubility}
-        </span>
+      {cosmetic.acf.solubility && (
+        <div className="w-full mt-3">
+          <span className="text-gray-700 text-sm font-bold">Solubility: </span>
+          <span className="text-gray-500 text-sm font-thin">
+            {cosmetic.acf.solubility}
+          </span>
+        </div>
+      )}
+      <div className="grid grid-cols-6 absolute bottom-[10px] gap-1">
+        {jsxIcons}
       </div>
+
+      {/* Active Component */}
+      {cosmetic.acf.active_component && (
+        <div className="w-full mt-3">
+          <span className="text-gray-700 text-sm font-bold">
+            Active Component:{" "}
+          </span>
+          <span className="text-gray-500 text-sm font-thin">
+            {cosmetic.acf.active_component}
+          </span>
+        </div>
+      )}
       <div className="grid grid-cols-6 absolute bottom-[10px] gap-1">
         {jsxIcons}
       </div>

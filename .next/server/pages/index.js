@@ -756,8 +756,8 @@ const News = ({ posts  })=>{
                             className: "flex justify-between col-span-3",
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                                        className: "text-white",
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                        className: "text-white text-3xl font-bold",
                                         children: "\u0627\u062E\u0628\u0627\u0631"
                                     })
                                 }),
@@ -812,57 +812,6 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 8945:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "I": () => (/* binding */ ProductCard)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5675);
-/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const ProductCard = ()=>{
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "productCard",
-            children: [
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "p-5",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
-                        className: "text-black",
-                        children: "\u062E\u0627\u06A9 \u062F\u06CC\u0627\u062A\u0648\u0645\u0647"
-                    })
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "px-5",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                        className: "text-black line-clamp-2",
-                        children: "\u062E\u0627\u06A9 \u062F\u06CC\u0627\u062A\u0648\u0645\u0647 (Diatomaceous earth) \u0627\u0632 \u0628\u0642\u0627\u06CC\u0627\u06CC \u0646\u0648\u0639\u06CC \u062C\u0644\u0628\u06A9 \u062A\u06A9\u200C\u0633\u0644\u0648\u0644\u06CC \u0628\u0647 \u0646\u0627\u0645 \u062F\u06CC\u0627\u062A\u0648\u0645 \u0628\u0647\u200C\u062F\u0633\u062A\u200C\u0622\u0645\u062F\u0647 \u0627\u0633\u062A. \u062F\u06CC\u0627\u062A\u0648\u0645\u200C\u0647\u0627 \u06AF\u0631\u0648\u0647\u06CC \u0627\u0632 \u062C\u0644\u0628\u06A9\u200C\u0647\u0627\u06CC \u06A9\u0648\u0686\u06A9 \u0647\u0633\u062A\u0646\u062F \u06A9\u0647 \u062F\u0631 \u0627\u0642\u06CC\u0627\u0646\u0648\u0633\u200C\u0647\u0627\u060C \u0622\u0628\u0631\u0627\u0647\u200C\u0647\u0627 \u0648 \u062E\u0627\u06A9\u200C\u0647\u0627\u06CC \u0633\u0631\u0627\u0633\u0631 \u062C\u0647\u0627\u0646 \u06CC\u0627\u0641\u062A \u0645\u06CC\u200C\u0634\u0648\u0646\u062F."
-                    })
-                }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "p-5 w-full flex justify-center",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_1___default()), {
-                        alt: "\u062E\u0627\u06A9 \u062F\u06CC\u0627\u062A\u0648\u0645\u0647",
-                        src: "/tempImgs/hudson.jpg",
-                        height: "250px",
-                        width: "250px"
-                    })
-                })
-            ]
-        })
-    });
-};
-
-
-/***/ }),
-
 /***/ 9719:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -877,7 +826,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6197);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8945);
+/* harmony import */ var _Fragments_NormalProductCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4152);
 /* harmony import */ var _hooks_WindowsDimension__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1540);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([framer_motion__WEBPACK_IMPORTED_MODULE_2__]);
 framer_motion__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
@@ -887,10 +836,10 @@ framer_motion__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.the
 
 
 
-const NormalProducts = ()=>{
+const NormalProducts = ({ products  })=>{
     const { height , width  } = (0,_hooks_WindowsDimension__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: "w-full h-full bg-[#89CFF0]",
+        className: "w-full h-full bg-[#000957]",
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
             initial: {
                 backgroundSize: "100% 100%"
@@ -903,7 +852,7 @@ const NormalProducts = ()=>{
                 repeat: 100,
                 repeatType: "reverse"
             },
-            className: "productsContainer max-w-6xl mx-auto w-full",
+            className: "max-w-6xl mx-auto w-full",
             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "w-full h-full px-12 grid grid-cols-1 md:grid-cols-3 gap-8",
                 children: [
@@ -914,24 +863,31 @@ const NormalProducts = ()=>{
                         className: "flex justify-between md:col-span-3",
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                                    children: "\u0645\u062D\u0635\u0648\u0644\u0627\u062A"
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                    className: "text-3xl font-bold text-white",
+                                    children: "\u0645\u062D\u0635\u0648\u0644\u0627\u062A \u0635\u0646\u0639\u062A\u06CC"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                     href: "./products",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                        className: "text-white text-lg",
+                                        className: "text-white text-lg cursor-pointer font-bold",
                                         children: "\u0647\u0645\u0647 \u0645\u062D\u0635\u0648\u0644\u0627\u062A"
                                     })
                                 })
                             })
                         ]
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {}),
-                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {}),
-                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {})
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_NormalProductCard__WEBPACK_IMPORTED_MODULE_4__/* .NormalProduct */ .S, {
+                        product: products[0]
+                    }),
+                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_NormalProductCard__WEBPACK_IMPORTED_MODULE_4__/* .NormalProduct */ .S, {
+                        product: products[1]
+                    }),
+                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_NormalProductCard__WEBPACK_IMPORTED_MODULE_4__/* .NormalProduct */ .S, {
+                        product: products[2]
+                    })
                 ]
             })
         })
@@ -957,7 +913,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6197);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8945);
+/* harmony import */ var _Fragments_SproductCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7203);
 /* harmony import */ var _hooks_WindowsDimension__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1540);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([framer_motion__WEBPACK_IMPORTED_MODULE_2__]);
 framer_motion__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
@@ -967,10 +923,12 @@ framer_motion__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.the
 
 
 
-const SpecialProducts = ()=>{
+const SpecialProducts = ({ products  })=>{
     const { height , width  } = (0,_hooks_WindowsDimension__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)();
+    console.log(products[0]);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: "w-full h-full bg-[#F1B3AA]",
+        className: "w-full h-full bg-[#D98C00]",
+        dir: "ltr",
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
             initial: {
                 backgroundSize: "100% 100%"
@@ -985,7 +943,7 @@ const SpecialProducts = ()=>{
             },
             className: "productsContainer max-w-6xl mx-auto w-full",
             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: "w-full h-full px-12 grid grid-cols-1 md:grid-cols-3 gap-8",
+                className: "w-full h-full px-12 grid grid-cols-1 md:grid-cols-2 gap-8",
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "h-[150px]"
@@ -994,24 +952,25 @@ const SpecialProducts = ()=>{
                         className: "flex justify-between md:col-span-3",
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                                    children: "\u0645\u062D\u0635\u0648\u0644\u0627\u062A"
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                    className: "text-white text-lg cursor-pointer font-bold",
+                                    children: "\u0647\u0645\u0647 \u0645\u062D\u0635\u0648\u0644\u0627\u062A"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                                    href: "./products",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                        className: "text-white text-lg",
-                                        children: "\u0647\u0645\u0647 \u0645\u062D\u0635\u0648\u0644\u0627\u062A"
-                                    })
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                    className: "text-3xl font-bold text-white",
+                                    children: "\u0645\u062D\u0635\u0648\u0644\u0627\u062A \u0622\u0631\u0627\u06CC\u0634\u06CC"
                                 })
                             })
                         ]
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {}),
-                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {}),
-                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_ProductCard__WEBPACK_IMPORTED_MODULE_4__/* .ProductCard */ .I, {})
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_SproductCard__WEBPACK_IMPORTED_MODULE_4__/* .SproductCard */ .Q, {
+                        cosmetic: products[0]
+                    }),
+                    width > 768 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Fragments_SproductCard__WEBPACK_IMPORTED_MODULE_4__/* .SproductCard */ .Q, {
+                        cosmetic: products[1]
+                    })
                 ]
             })
         })
@@ -1444,7 +1403,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_com
 
 
 
-function Home({ slides , posts , vendors  }) {
+function Home({ slides , posts , vendors , normalProducts , specialProducts ,  }) {
     const { 0: animateManufacturers , 1: setAnimateManufacturers  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     const { 0: hideHeader , 1: setHideHeader  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
@@ -1499,11 +1458,15 @@ function Home({ slides , posts , vendors  }) {
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "section",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Products_NormalProducts__WEBPACK_IMPORTED_MODULE_7__/* .NormalProducts */ .a, {})
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Products_NormalProducts__WEBPACK_IMPORTED_MODULE_7__/* .NormalProducts */ .a, {
+                                    products: normalProducts
+                                })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "section",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Products_SpecialProducts__WEBPACK_IMPORTED_MODULE_8__/* .SpecialProducts */ .$, {})
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Products_SpecialProducts__WEBPACK_IMPORTED_MODULE_8__/* .SpecialProducts */ .$, {
+                                    products: specialProducts
+                                })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "section",
@@ -1539,11 +1502,15 @@ async function getStaticProps({ params  }) {
     const slides = await (0,_utils_wordpress__WEBPACK_IMPORTED_MODULE_12__/* .getSlides */ .VU)(2);
     const posts = await (0,_utils_wordpress__WEBPACK_IMPORTED_MODULE_12__/* .getPosts */ .Jq)(3);
     const vendors = await (0,_utils_wordpress__WEBPACK_IMPORTED_MODULE_12__/* .getVendors */ .dH)(8);
+    const normalProducts = await (0,_utils_wordpress__WEBPACK_IMPORTED_MODULE_12__/* .getProducts */ .Xp)(3);
+    const specialProducts = await (0,_utils_wordpress__WEBPACK_IMPORTED_MODULE_12__/* .getCosmetics */ .Z5)(2, 1);
     return {
         props: {
             slides,
             posts,
-            vendors
+            vendors,
+            normalProducts,
+            specialProducts
         },
         revalidate: 10
     };
@@ -1743,7 +1710,7 @@ module.exports = import("framer-motion");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [505,61,158,893,841], () => (__webpack_exec__(4369)));
+var __webpack_exports__ = __webpack_require__.X(0, [505,61,158,893,203,841,152], () => (__webpack_exec__(4369)));
 module.exports = __webpack_exports__;
 
 })();

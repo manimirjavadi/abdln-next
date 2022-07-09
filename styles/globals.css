@@ -84,15 +84,15 @@ a {
 }
 
 .headerLight {
-    @apply max-w-5xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
 }
 
 .headerDark {
-    @apply max-w-5xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
 }
 
 .headerAlternate {
-    @apply max-w-5xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
 }
 
 a:hover {

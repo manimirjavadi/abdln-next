@@ -63,7 +63,7 @@ export default function SingleProduct({ product }) {
           <div className="relative w-full h-[300px]">
             <Image
               alt={product.title.rendered}
-              src={selectedTab.product_image}
+              src={selectedTab.product_image ?? featuredmedia["source_url"]}
               layout="fill"
               objectFit="contain"
             />

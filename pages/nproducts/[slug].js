@@ -3,6 +3,7 @@ import Link from "next/dist/client/link";
 import Layout from "../../components/layouts/aboutus-layout";
 import { getProduct, getSlugs } from "../../utils/wordpress";
 import { useState } from "react";
+import { Chip } from "../../components/UI/Chip";
 
 export default function SingleProduct({ product }) {
   const featuredmedia = product["_embedded"]["wp:featuredmedia"][0];
@@ -33,14 +34,13 @@ export default function SingleProduct({ product }) {
       return (
         <li
           key={g.categories}
-          className={`bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px ${
+          className={`bg-white px-4 text-gray-800 font-semibold py-2 rounded-t-xl border-abl border-t border-r border-l -mb-px mx-1 ${
             g.categories === selectedTab.categories ? "" : "border-b"
           }`}
         >
           <a
             onClick={() => {
               setSelectedTab(g);
-              console.log(g);
             }}
             className={`cursor-pointer ${
               g.categories === selectedTab.categories
@@ -58,8 +58,18 @@ export default function SingleProduct({ product }) {
 
   return (
     <main className="max-w-5xl mx-auto px-4 md:px-0 py-10">
-      <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
+      <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4 pb-[100px]">
         <div>
+          <div className="relative w-full h-[300px]">
+            <Image
+              alt={product.title.rendered}
+              src={selectedTab.product_image}
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+        <div className="pl-6 pt-6">
           <div className="px-8 pt-6 pb-2">
             <h1 className="text-2xl text-black">{product.title.rendered}</h1>
           </div>
@@ -75,57 +85,101 @@ export default function SingleProduct({ product }) {
             </span>
             {jsxManufacturers}
           </div>
-          <div className="relative w-full h-[300px]">
-            <Image
-              alt={product.title.rendered}
-              src={featuredmedia["source_url"]}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          <div
+            className="singleProduct px-8 pt-6 pb-2 col-span-full"
+            dangerouslySetInnerHTML={{ __html: product.content.rendered }}
+          ></div>
         </div>
-        <div className="pl-6">
+        <div className="pl-6 col-span-2 px-5">
           <div className="w-full">
             <h5>
               {product.title.rendered} <span> </span> در دیگر صنایع
             </h5>
           </div>
-          <div className="rounded border w-full h-full mx-auto mt-4">
+          <div className="rounded w-full h-full mx-auto mt-4">
             <ul id="tabs" className="inline-flex pt-2 px-1 w-full border-b">
               {jsxTabs}
             </ul>
 
             <div id="tab-contents">
-              <div className="p-4">
-                <table className="w-full">
+              <div className="p-4 overflow-x-scroll scrollbar-thin scrollbar-track-abdlOrange scrollbar-thumb-gray-500">
+                <table className="w-full border-collapse">
                   <thead className="h-[60px]">
-                    <tr>
-                      <th className="text-xl">
-                        <span> گرید‌ها در صنعت </span>
-                        <span className="text-abdlOrange">
+                    <tr className="border-b">
+                      <th className="text-lg">
+                        <span> گرید‌ها</span>
+                        {/* <span className="text-abdlOrange">
                           {selectedTab.categories}
-                        </span>
+                        </span> */}
+                      </th>
+                      <th className="text-lg">
+                        <span> کاربرد‌ها</span>
+                        {/* <span className="text-abdlOrange">
+                          {selectedTab.categories}
+                        </span> */}
+                      </th>
+                      <th className="text-lg">
+                        <span> مواد تشکیل‌دهنده</span>
+                        {/* <span className="text-abdlOrange">
+                          {selectedTab.categories}
+                        </span> */}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {selectedTab?.grades?.map((g) => {
-                      return (
-                        <tr key={g.theGrade} className="text-center">
-                          <td className="text-lg">{g.theGrade}</td>
-                        </tr>
-                      );
-                    })}
+                    <tr>
+                      <td className="text-center">
+                        {selectedTab?.grades?.map((g) => {
+                          return (
+                            <span key={g.theGrade} className="text-lg">
+                              <Chip
+                                className="bg-abdlOrange text-white border-abdlOrange hover:bg-white hover:text-abdlOrange duration-100"
+                                color="abdlOrange"
+                                text="abdlOrange"
+                              >
+                                {g.theGrade}
+                              </Chip>
+                            </span>
+                          );
+                        })}
+                      </td>
+                      <td className="text-center">
+                        {selectedTab?.applications?.map((a) => {
+                          return (
+                            <span key={a.application} className="text-lg">
+                              <Chip
+                                className="bg-abdlBlue text-white hover:bg-white hover:text-abdlBlue border-abdlBlue duration-100"
+                                color="abdlBlue"
+                                text="abdlBlue"
+                              >
+                                {a.application}
+                              </Chip>
+                            </span>
+                          );
+                        })}
+                      </td>
+                      <td className="text-center">
+                        {selectedTab?.ingredients?.map((i) => {
+                          return (
+                            <span key={i.ingredient} className="text-lg">
+                              <Chip
+                                className="bg-black text-white border-black hover:bg-white hover:text-black duration-100"
+                                color="myBlack"
+                                text="myBlack"
+                              >
+                                {i.ingredient}
+                              </Chip>
+                            </span>
+                          );
+                        })}
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-        <div
-          className="singleProduct px-8 pt-6 pb-2 col-span-full"
-          dangerouslySetInnerHTML={{ __html: product.content.rendered }}
-        ></div>
       </div>
     </main>
   );

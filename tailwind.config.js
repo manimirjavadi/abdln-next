@@ -14,6 +14,8 @@ module.exports = {
         current: "currentColor",
         abdlOrange: "#D98C00",
         abdlBlue: "#000957",
+        myBlack: "#000",
+        myWhite: "#fff",
       },
     },
   },

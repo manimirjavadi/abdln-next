@@ -74,20 +74,25 @@ a {
     @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
 }
 
+.NormalProductCard {
+    @apply bg-white rounded-2xl bg-cover overflow-hidden;
+}
+
+
 .newsCard {
     @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
 }
 
 .headerLight {
-    @apply max-w-5xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
 }
 
 .headerDark {
-    @apply max-w-5xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
 }
 
 .headerAlternate {
-    @apply max-w-5xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
+    @apply max-w-6xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
 }
 
 a:hover {
@@ -148,4 +153,17 @@ div.newsContainer p {
 
 .paginateActive {
     @apply bg-white text-abdlBlue;
+}
+
+.singleProduct {
+    @apply text-black;
+}
+
+.singleProduct h1,h2,h3,h4,h5,h6 {
+    margin-top: 1rem;
+    color: black !important;
+}
+
+.singleProduct p {
+    margin-top: 0.5rem;
 }

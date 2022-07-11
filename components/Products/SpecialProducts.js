@@ -18,11 +18,11 @@ export const SpecialProducts = ({ products }) => {
         <div className="w-full h-full px-12 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="h-[150px]"></div>
           <div className="flex justify-between md:col-span-3">
-            <div>
+            <Link href="/sproducts/list">
               <span className="text-white text-lg cursor-pointer font-bold">
                 همه محصولات
               </span>
-            </div>
+            </Link>
             <div>
               <span className="text-3xl font-bold text-white">
                 محصولات آرایشی

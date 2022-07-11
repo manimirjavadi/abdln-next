@@ -24,7 +24,7 @@ export const NormalProducts = ({ products }) => {
               </span>
             </div>
             <div>
-              <Link href="./products">
+              <Link href="/nproducts/list">
                 <span className="text-white text-lg cursor-pointer font-bold">
                   همه محصولات
                 </span>

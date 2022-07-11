@@ -6,7 +6,6 @@ import useWindowDimensions from "../../hooks/WindowsDimension";
 
 export const SpecialProducts = ({ products }) => {
   const { height, width } = useWindowDimensions();
-  console.log(products[0]);
 
   return (
     <div className="w-full h-full bg-[#D98C00]" dir="ltr">

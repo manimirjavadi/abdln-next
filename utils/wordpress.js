@@ -1,3 +1,5 @@
+import { isResSent } from "next/dist/shared/lib/utils";
+
 const BASE_URL = process.env.BASE_URL;
 
 export async function wpHttp(
@@ -10,7 +12,9 @@ export async function wpHttp(
   industry = "",
   brand = "",
   search = "",
-  lang = "fa"
+  lang = "fa",
+  order = "",
+  order_by = ""
 ) {
   let url = `${BASE_URL}/${REQUEST}?per_page=${limit}&_embed&acf_format=standard`;
   if (page) {
@@ -36,6 +40,12 @@ export async function wpHttp(
   }
   if (lang) {
     url += `&lang=${lang}`;
+  }
+  if (order) {
+    url += `&order=${order}`;
+  }
+  if (order_by) {
+    url += `&order_by=${order_by}`;
   }
   const res = await fetch(url);
   return res;
@@ -144,7 +154,20 @@ export async function getSlugs(type) {
 }
 
 export async function getCosmetics(limit = 100, page = "", c_category = "") {
-  const cosmeticRes = await wpHttp("cosmetics", limit, page, "", c_category);
+  const cosmeticRes = await wpHttp(
+    "cosmetics",
+    limit,
+    page,
+    "",
+    c_category,
+    "",
+    "",
+    "",
+    "",
+    "",
+    "asc",
+    "date_gmt"
+  );
   let totalPages = 1;
 
   for (let pair of cosmeticRes.headers.entries()) {

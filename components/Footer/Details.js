@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/dist/client/image";
 import logo from "../../assets/images/abdln_f.png";
-
 export const Details = () => {
   return (
     <div className="w-full grid grid-cols-1 relative h-full">
@@ -49,7 +48,12 @@ export const Details = () => {
             <span className="mt-1 text-abdlBlue font-bold">۰۲۱-۸۸۲۸۹۹۵۱</span>
           </div>
         </div>
-        <div className="bg-black mapContainer w-full h-full place-content-end row-span-2"></div>
+        <a
+          className="bg-black mapContainer w-full h-full place-content-end row-span-2"
+          href="https://www.google.com/maps/place/35%C2%B043'27.8%22N+51%C2%B025'57.7%22E/@35.7243796,51.4305149,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x21e086a40d2ec5f0!8m2!3d35.7243796!4d51.4327036"
+          target="_blank"
+          rel="noreferrer"
+        ></a>
         <div className="col-span-2">
           <div className="flex justify-start gap-2 mt-8">
             <svg
@@ -66,8 +70,7 @@ export const Details = () => {
             </svg>
 
             <span className="mt-1 text-abdlBlue font-bold">
-              تهران - لورم ایپسوم ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است.
+              تهران - خیابان مطهری - جنب تعزیرات حکومتی - پلاک ۱۲۳ طبقه دوم
             </span>
           </div>
         </div>

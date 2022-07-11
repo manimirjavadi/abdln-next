@@ -76,7 +76,12 @@ export const Details = () => {
       <div className="mt-8 bottom-0 w-full">
         <div className="flex justify-between">
           {/* Instagram */}
-          <a className="cursor-pointer hover:scale-125 duration-200">
+          <a
+            href="https://www.instagram.com/abdolahian.co/"
+            target="_blank"
+            rel="noreferrer"
+            className="cursor-pointer hover:scale-125 duration-200"
+          >
             <svg
               width="33"
               height="33"
@@ -92,7 +97,12 @@ export const Details = () => {
           </a>
 
           {/* LinkedIn */}
-          <a className="cursor-pointer hover:scale-125 duration-200">
+          <a
+            className="cursor-pointer hover:scale-125 duration-200"
+            href="https://www.linkedin.com/company/abdolahian-co"
+            target="_blank"
+            rel="noreferrer"
+          >
             <svg
               width="34"
               height="33"
@@ -108,7 +118,12 @@ export const Details = () => {
           </a>
 
           {/* Facebook */}
-          <a className="cursor-pointer hover:scale-125 duration-200">
+          <a
+            className="cursor-pointer hover:scale-125 duration-200"
+            href="https://www.facebook.com/abdolahianco"
+            target="_blank"
+            rel="noreferrer"
+          >
             <svg
               width="34"
               height="33"
@@ -124,7 +139,12 @@ export const Details = () => {
           </a>
 
           {/* Twitter */}
-          <a className="cursor-pointer hover:scale-125 duration-200">
+          <a
+            href="https://twitter.com/AbdolahianCo"
+            target="_blank"
+            rel="noreferrer"
+            className="cursor-pointer hover:scale-125 duration-200"
+          >
             <svg
               width="38"
               height="29"

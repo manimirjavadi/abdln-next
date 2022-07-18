@@ -54,7 +54,7 @@ export const Intro = ({ slides }) => {
         id="main"
         animatorController={startMainAnimation}
         text={slides[1]?.content}
-        title={slides[0].title}
+        title={slides[1].title}
       />
 
       <Video id="video" animatorController={startVideoAnimation} />

@@ -20,7 +20,7 @@ export const NewsCard = ({ theNews }) => {
           {/* News description */}
           <div className="absolute bottom-[-14px] right-[-10px] w-[110%] h-32 bg-white blur-lg" />
           <div className="newsDIV absolute w-full bottom-0 right-0 px-2 pb-3">
-            <p className="text-black text-xl font-bold w-full line-clamp-3">
+            <p className="text-black font-bold w-full line-clamp-3">
               {theNews.title.rendered}
             </p>
           </div>

@@ -80,7 +80,7 @@ export const Details = () => {
         <div className="flex justify-between">
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/abdolahian.co/"
+            href="https://www.instagram.com/abdollahian.co/"
             target="_blank"
             rel="noreferrer"
             className="cursor-pointer hover:scale-125 duration-200"

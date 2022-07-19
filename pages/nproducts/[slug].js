@@ -59,15 +59,21 @@ export default function SingleProduct({ product }) {
   return (
     <main className="max-w-5xl mx-auto px-4 md:px-0 py-10">
       <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4 pb-[100px]">
-        <div>
-          <div className="relative w-full h-[300px]">
-            <Image
-              alt={product.title.rendered}
-              src={selectedTab.product_image ?? featuredmedia["source_url"]}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+        <div className="relative w-full h-[300px]">
+          <Image
+            alt={product.title.rendered}
+            src={selectedTab.product_image ?? featuredmedia["source_url"]}
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <div className="md:hidden relative w-full h-[300px]">
+          <Image
+            alt={product.title.rendered}
+            src={selectedTab.product_image ?? featuredmedia["source_url"]}
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
         <div className="pl-6 pt-6">
           <div className="px-8 pt-6 pb-2">

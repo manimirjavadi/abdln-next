@@ -2,168 +2,177 @@
 @tailwind components;
 
 @layer base {
-    @font-face {
-        font-family: 'vazirmatn';
-        src: local('vazirmatn'), url("../assets/fonts/Vazirmatn[wght].woff2");
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-    }
+  @font-face {
+    font-family: "vazirmatn";
+    src: local("vazirmatn"), url("../assets/fonts/Vazirmatn[wght].woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 @tailwind utilities;
 
 body {
-    background-color: #f0f0f0;
-    @apply scrollbar-thin scrollbar-thumb-abdlBlue;
+  background-color: #f0f0f0;
+  @apply scrollbar-thin scrollbar-thumb-abdlBlue;
 }
 
 h1 {
-    @apply text-white text-4xl font-bold;
+  @apply text-white text-4xl font-bold;
 }
 h2 {
-    @apply text-white text-3xl font-bold;
+  @apply text-white text-3xl font-bold;
 }
 h3 {
-    @apply text-white text-2xl font-bold;
+  @apply text-white text-2xl font-bold;
 }
 h4 {
-    @apply text-white text-xl font-bold;
+  @apply text-white text-xl font-bold;
 }
 h5 {
-    @apply text-white text-lg font-bold;
+  @apply text-white text-lg font-bold;
 }
 h6 {
-    @apply text-white font-bold;
+  @apply text-white font-bold;
 }
 p {
-    @apply text-white;
+  @apply text-white;
 }
 
 .fp-arrow {
-    @apply mx-12;
+  @apply mx-12;
 }
 
-#fp-nav ul li a span, .fp-slidesNav ul li a span {
-    background: none !important;
-    background-color: white !important;
-    border: 2px solid #727272 !important;
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: none !important;
+  background-color: white !important;
+  border: 2px solid #727272 !important;
 }
 
 a {
-    @apply text-abdlBlue text-lg;
+  @apply text-abdlBlue text-lg;
 }
 
 .navbarActive {
-    @apply text-white text-xl;
+  @apply text-white text-xl;
 }
 
 .navbarActiveDark {
-    @apply text-abdlOrange text-xl;
+  @apply text-abdlOrange text-xl;
 }
 
 .productsContainer {
-    background-color: #89CFF0;
-    background: no-repeat;
-    background-image: url('/abdP.svg');
-    background-position: center;
-    z-index: 0;
+  background-color: #89cff0;
+  background: no-repeat;
+  background-image: url("/abdP.svg");
+  background-position: center;
+  z-index: 0;
 }
 
 .productCard {
-    @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
+  @apply bg-white rounded-2xl h-[400px] bg-cover overflow-hidden;
 }
 
 .NormalProductCard {
-    @apply bg-white rounded-2xl bg-cover overflow-hidden;
+  @apply bg-white rounded-2xl bg-cover overflow-hidden;
 }
 
-
 .newsCard {
-    @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
+  @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
 }
 
 .headerLight {
-    @apply max-w-6xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
+  @apply max-w-6xl mx-auto bg-white/60 py-3 rounded-b-3xl px-5;
 }
 
 .headerDark {
-    @apply max-w-6xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
+  @apply max-w-6xl mx-auto bg-black/30 py-3 rounded-b-3xl px-5;
 }
 
 .headerAlternate {
-    @apply max-w-6xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
+  @apply max-w-6xl mx-auto bg-white/30 py-3 rounded-b-3xl px-5;
 }
 
 a:hover {
-    @apply hover:text-abdlOrange duration-200;
+  @apply hover:text-abdlOrange duration-200;
 }
 
 input {
-    @apply w-full bg-[#EBEBEB] h-14 px-6 rounded-3xl;
+  @apply w-full bg-[#EBEBEB] h-14 px-6 rounded-3xl;
 }
 
 textarea {
-    @apply w-full bg-[#EBEBEB] h-40 px-6 rounded-3xl py-4;
-    resize: none;
+  @apply w-full bg-[#EBEBEB] h-40 px-6 rounded-3xl py-4;
+  resize: none;
 }
 
 button {
-    @apply w-full rounded-3xl bg-abdlOrange text-white text-lg font-bold py-3
+  @apply w-full rounded-3xl bg-abdlOrange text-white text-lg font-bold py-3;
 }
 
 button:hover {
-    @apply bg-white border-2 border-abdlOrange text-abdlOrange duration-200;
+  @apply bg-white border-2 border-abdlOrange text-abdlOrange duration-200;
 }
 
 .mapContainer {
-    background: no-repeat;
-    background-image: url('/tempImgs/map.jpg');
-    background-position: center;
-    background-size: contain;
+  background: no-repeat;
+  background-image: url("/tempImgs/map.jpg");
+  background-position: center;
+  background-size: contain;
 }
 
 p {
-    @apply text-[#181818]
+  @apply text-[#181818];
 }
 
 div.newsContainer p {
-    @apply mt-4 text-justify;
+  @apply mt-4 text-justify;
 }
 
 .slideDIV p {
-    @apply mt-6 text-justify text-white;
+  @apply mt-6 text-justify text-white;
 }
 
 .newsDIV p {
-    @apply mt-6 text-justify text-black;
+  @apply mt-6 text-justify text-black;
+}
+
+.aboutusDIV p {
+  @apply text-justify;
 }
 
 .aboutusDIV p ul {
-    @apply px-4 text-lg mt-10 text-justify;
+  @apply px-4 text-lg mt-10 text-justify;
 }
 
 .paginationButton {
-    @apply h-8 w-8 pt-1 border-2 border-abdlBlue rounded-lg bg-abdlBlue text-white;
+  @apply h-8 w-8 pt-1 border-2 border-abdlBlue rounded-lg bg-abdlBlue text-white;
 }
 
 .paginationButton:hover {
-    @apply text-abdlBlue bg-white duration-200;
+  @apply text-abdlBlue bg-white duration-200;
 }
 
 .paginateActive {
-    @apply bg-white text-abdlBlue;
+  @apply bg-white text-abdlBlue;
 }
 
 .singleProduct {
-    @apply text-black;
+  @apply text-black;
 }
 
-.singleProduct h1,h2,h3,h4,h5,h6 {
-    margin-top: 1rem;
-    color: black !important;
+.singleProduct h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1rem;
+  color: black !important;
 }
 
 .singleProduct p {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }

@@ -228,7 +228,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                       src={hideHeader ? darkLogo : lightLogo}
                       height="45rem"
                       width="90rem"
-                      alt="عبداللهیان"
+                      alt="عبدالهیان"
                     />
                   </a>
                 </Link>

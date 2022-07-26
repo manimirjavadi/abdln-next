@@ -11,7 +11,7 @@ export const Details = () => {
           className="mt-6"
           height="100px"
           width="200px"
-          alt="گروه بازرگانی عبداللهیان"
+          alt="گروه بازرگانی عبدالهیان"
         />
       </div>
       <div className="grid grid-cols-2">

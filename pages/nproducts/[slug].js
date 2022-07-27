@@ -62,7 +62,11 @@ export default function SingleProduct({ product }) {
         <div className="relative w-full h-[300px]">
           <Image
             alt={product.title.rendered}
-            src={selectedTab.product_image ?? featuredmedia["source_url"]}
+            src={
+              selectedTab.product_image
+                ? selectedTab.product_image
+                : featuredmedia["source_url"]
+            }
             layout="fill"
             objectFit="contain"
           />
@@ -70,7 +74,11 @@ export default function SingleProduct({ product }) {
         <div className="md:hidden relative w-full h-[300px]">
           <Image
             alt={product.title.rendered}
-            src={selectedTab.product_image ?? featuredmedia["source_url"]}
+            src={
+              selectedTab.product_image
+                ? selectedTab.product_image
+                : featuredmedia["source_url"]
+            }
             layout="fill"
             objectFit="contain"
           />
@@ -135,49 +143,52 @@ export default function SingleProduct({ product }) {
                   <tbody>
                     <tr>
                       <td className="text-center">
-                        {selectedTab?.grades?.map((g) => {
-                          return (
-                            <span key={g.theGrade} className="text-lg">
-                              <Chip
-                                className="bg-abdlOrange text-white border-abdlOrange hover:bg-white hover:text-abdlOrange duration-100"
-                                color="abdlOrange"
-                                text="abdlOrange"
-                              >
-                                {g.theGrade}
-                              </Chip>
-                            </span>
-                          );
-                        })}
+                        {selectedTab.grades &&
+                          selectedTab?.grades?.map((g) => {
+                            return (
+                              <span key={g.theGrade} className="text-lg">
+                                <Chip
+                                  className="bg-abdlOrange text-white border-abdlOrange hover:bg-white hover:text-abdlOrange duration-100"
+                                  color="abdlOrange"
+                                  text="abdlOrange"
+                                >
+                                  {g.theGrade}
+                                </Chip>
+                              </span>
+                            );
+                          })}
                       </td>
                       <td className="text-center">
-                        {selectedTab?.applications?.map((a) => {
-                          return (
-                            <span key={a.application} className="text-lg">
-                              <Chip
-                                className="bg-abdlBlue text-white hover:bg-white hover:text-abdlBlue border-abdlBlue duration-100"
-                                color="abdlBlue"
-                                text="abdlBlue"
-                              >
-                                {a.application}
-                              </Chip>
-                            </span>
-                          );
-                        })}
+                        {selectedTab.applications &&
+                          selectedTab?.applications?.map((a) => {
+                            return (
+                              <span key={a.application} className="text-lg">
+                                <Chip
+                                  className="bg-abdlBlue text-white hover:bg-white hover:text-abdlBlue border-abdlBlue duration-100"
+                                  color="abdlBlue"
+                                  text="abdlBlue"
+                                >
+                                  {a.application}
+                                </Chip>
+                              </span>
+                            );
+                          })}
                       </td>
                       <td className="text-center">
-                        {selectedTab?.ingredients?.map((i) => {
-                          return (
-                            <span key={i.ingredient} className="text-lg">
-                              <Chip
-                                className="bg-black text-white border-black hover:bg-white hover:text-black duration-100"
-                                color="myBlack"
-                                text="myBlack"
-                              >
-                                {i.ingredient}
-                              </Chip>
-                            </span>
-                          );
-                        })}
+                        {selectedTab.ingredients &&
+                          selectedTab?.ingredients?.map((i) => {
+                            return (
+                              <span key={i.ingredient} className="text-lg">
+                                <Chip
+                                  className="bg-black text-white border-black hover:bg-white hover:text-black duration-100"
+                                  color="myBlack"
+                                  text="myBlack"
+                                >
+                                  {i.ingredient}
+                                </Chip>
+                              </span>
+                            );
+                          })}
                       </td>
                     </tr>
                   </tbody>

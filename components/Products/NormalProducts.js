@@ -8,7 +8,7 @@ export const NormalProducts = ({ products }) => {
   const { height, width } = useWindowDimensions();
 
   return (
-    <div className="w-full h-full bg-[#000957]">
+    <div className="w-full h-full bg-[#D98C00]">
       <motion.div
         initial={{ backgroundSize: "100% 100%" }}
         whileInView={{ backgroundSize: "120% 120%" }}

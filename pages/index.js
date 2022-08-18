@@ -71,9 +71,9 @@ export default function Home({
             <div className="section">
               <NormalProducts products={normalProducts} />
             </div>
-            <div className="section">
+            {/* <div className="section">
               <SpecialProducts products={specialProducts} />
-            </div>
+            </div> */}
             <div className="section">
               <News posts={posts} />
             </div>

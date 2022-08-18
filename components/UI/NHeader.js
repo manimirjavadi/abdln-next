@@ -75,23 +75,12 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/nproducts/list">
                 <a
                   className={`${
-                    router.pathname.startsWith("/sproducts")
+                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
                       ? "navbarActive"
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">محصولات صنعتی</li>
-                </a>
-              </Link>
-              <Link href="/sproducts/list">
-                <a
-                  className={`${
-                    router.pathname.startsWith("/sproducts")
-                      ? "navbarActiveDark"
-                      : ""
-                  }`}
-                >
-                  <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
+                  <li className="text-lg mb-5 text-center">محصولات</li>
                 </a>
               </Link>
               <Link href="/news/list/1">
@@ -105,15 +94,26 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <li className="text-lg mb-5 text-center">اخبار</li>
                 </a>
               </Link>
-              <Link href="/manufacturers/list">
+              <Link href="/articles/list">
                 <a
                   className={`${
-                    router.pathname.startsWith("/manufacturers")
+                    router.pathname.startsWith("/articles")
                       ? "navbarActiveDark mobile"
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
+                  <li className="text-lg mb-5 text-center">مقالات</li>
+                </a>
+              </Link>
+              <Link href="/aboutus">
+                <a
+                  className={`${
+                    router.pathname.startsWith("/aboutus")
+                      ? "navbarActiveDark mobile"
+                      : ""
+                  }`}
+                >
+                  <li className="text-lg mb-5 text-center">درباره ما</li>
                 </a>
               </Link>
             </ul>
@@ -138,37 +138,15 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <span className="text-sm font-bold ">صفحه اصلی</span>
                 </a>
               </Link>
-              <Link href="/aboutus">
-                <a
-                  className={`h-full grid place-content-center px-3 text-darkGrey ml-8  ${
-                    router.pathname.startsWith("/aboutus")
-                      ? "navbarActiveDark"
-                      : ""
-                  }`}
-                >
-                  <span className="text-sm font-bold">درباره ما</span>
-                </a>
-              </Link>
               <Link href="/nproducts/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    router.pathname.startsWith("/nproducts")
+                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
                       ? "navbarActiveDark"
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">محصولات صنعتی</span>
-                </a>
-              </Link>
-              <Link href="/sproducts/list">
-                <a
-                  className={`h-full grid place-content-center px-3 ml-8 ${
-                    router.pathname.startsWith("/sproducts")
-                      ? "navbarActiveDark"
-                      : ""
-                  }`}
-                >
-                  <span className="text-sm font-bold">محصولات آرایشی</span>
+                  <span className="text-sm font-bold">محصولات</span>
                 </a>
               </Link>
               <Link href="/news/list/1">
@@ -182,15 +160,38 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <span className="text-sm font-bold">اخبار</span>
                 </a>
               </Link>
+              <Link href="/articles/list">
+                <a
+                  className={`h-full grid place-content-center px-3 ml-8 ${
+                    router.pathname.startsWith("/articles")
+                      ? "navbarActiveDark"
+                      : ""
+                  }`}
+                >
+                  <span className="text-sm font-bold">مقالات</span>
+                </a>
+              </Link>
               <Link href="/manufacturers/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    router.pathname.startsWith("/manufacturers")
+                    (router.pathname.startsWith("/manufacturers") || router.pathname.startsWith("/sproducts"))
                       ? "navbarActiveDark"
                       : ""
                   }`}
                 >
                   <span className="text-sm font-bold">تامین‌کنندگان</span>
+                </a>
+              </Link>
+
+              <Link href="/aboutus">
+                <a
+                  className={`h-full grid place-content-center px-3 ml-8 ${
+                    router.pathname.startsWith("/aboutus")
+                      ? "navbarActiveDark"
+                      : ""
+                  }`}
+                >
+                  <span className="text-sm font-bold">درباره ما</span>
                 </a>
               </Link>
             </div>

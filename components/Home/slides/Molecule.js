@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
-import theImage from "../../../assets/images/Molecule.png";
+import theImage from "../../../assets/images/molecule.png";
 
 const textVariant = {
   hidden: {

@@ -11,7 +11,7 @@ export const Details = () => {
           className="mt-6"
           height="100px"
           width="200px"
-          alt="گروه بازرگانی عبداللهیان"
+          alt="گروه بازرگانی عبدالهیان"
         />
       </div>
       <div className="grid grid-cols-2">
@@ -77,7 +77,7 @@ export const Details = () => {
       </div>
 
       <div className="mt-8 bottom-0 w-full">
-        <div className="flex justify-between">
+        <div className="flex place-content-center gap-12">
           {/* Instagram */}
           <a
             href="https://www.instagram.com/abdollahian.co/"

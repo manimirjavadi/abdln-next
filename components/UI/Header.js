@@ -68,21 +68,25 @@ export const Header = ({ hideHeader, otherPages }) => {
                       router.pathname === "/" ? "navbarActiveDark" : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">صفحه اصلی</li>
+                    <li className="text-lg mb-5 text-center">
+                      صفحه اصلی
+                    </li>
                   </motion.a>
                 </Link>
-                <Link href="/aboutus">
+                <Link href="/nproducts/list">
                   <a
                     className={`${
-                      router.pathname.startsWith("/nproducts")
+                      (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts") )
                         ? "navbarActiveDark"
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">درباره ما</li>
+                    <li className="text-lg mb-5 text-center">
+                      محصولات   
+                    </li>
                   </a>
                 </Link>
-                <Link href="/nproducts/list">
+                {/* <Link href="/nproducts/list">
                   <a
                     className={`${
                       router.pathname.startsWith("/sproducts")
@@ -92,8 +96,8 @@ export const Header = ({ hideHeader, otherPages }) => {
                   >
                     <li className="text-lg mb-5 text-center">محصولات صنعتی</li>
                   </a>
-                </Link>
-                <Link href="/sproducts/list">
+                </Link> */}
+                {/* <Link href="/sproducts/list">
                   <a
                     className={`${
                       router.pathname.startsWith("/sproducts")
@@ -103,7 +107,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                   >
                     <li className="text-lg mb-5 text-center">محصولات آرایشی</li>
                   </a>
-                </Link>
+                </Link> */}
                 <Link href="/news/list/1">
                   <a
                     className={`${
@@ -115,6 +119,17 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">اخبار</li>
                   </a>
                 </Link>
+                <Link href="/articles/list/1">
+                  <a
+                    className={`${
+                      router.pathname.startsWith("/articles")
+                        ? "navbarActiveDark mobile"
+                        : ""
+                    }`}
+                  >
+                    <li className="text-lg mb-5 text-center">مقالات</li>
+                  </a>
+                </Link>
                 <Link href="/manufacturers/list">
                   <a
                     className={`${
@@ -124,6 +139,19 @@ export const Header = ({ hideHeader, otherPages }) => {
                     }`}
                   >
                     <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
+                  </a>
+                </Link>
+                <Link href="/aboutus">
+                  <a
+                    className={`${
+                      router.pathname.startsWith("/aboutus")
+                        ? "navbarActiveDark mobile"
+                        : ""
+                    }`}
+                  >
+                    <li className="text-lg mb-5 text-center">‌
+                      درباره ما
+                    </li>
                   </a>
                 </Link>
               </ul>
@@ -155,22 +183,9 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold ">صفحه اصلی</span>
                   </a>
                 </Link>
-                <Link href="/aboutus">
-                  <a
-                    className={`h-full grid place-content-center px-3 text-darkGrey ml-8  ${
-                      router.pathname.startsWith("/aboutus")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
-                    }`}
-                  >
-                    <span className="text-sm font-bold">درباره ما</span>
-                  </a>
-                </Link>
                 <Link href="/nproducts/list">
                   <a
-                    className={`h-full grid place-content-center px-3 ml-8 ${
+                    className={`h-full grid place-content-center px-3 text-darkGrey ml-8  ${
                       router.pathname.startsWith("/nproducts")
                         ? otherPages
                           ? "navbarActiveDark"
@@ -178,20 +193,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
-                    <span className="text-sm font-bold">محصولات صنعتی</span>
-                  </a>
-                </Link>
-                <Link href="/sproducts/list">
-                  <a
-                    className={`h-full grid place-content-center px-3 ml-8 ${
-                      router.pathname.startsWith("/sproducts")
-                        ? otherPages
-                          ? "navbarActiveDark"
-                          : "navbarActive"
-                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
-                    }`}
-                  >
-                    <span className="text-sm font-bold">محصولات آرایشی</span>
+                    <span className="text-sm font-bold">محصولات</span>
                   </a>
                 </Link>
                 <Link href="/news/list/1">
@@ -207,6 +209,19 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">اخبار</span>
                   </a>
                 </Link>
+                <Link href="/articles/list/1">
+                  <a
+                    className={`h-full grid place-content-center px-3 ml-8 ${
+                      router.pathname.startsWith("/articles")
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
+                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                    }`}
+                  >
+                    <span className="text-sm font-bold">مقالات</span>
+                  </a>
+                </Link>
                 <Link href="/manufacturers/list">
                   <a
                     className={`h-full grid place-content-center px-3 ml-8 ${
@@ -220,6 +235,22 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <span className="text-sm font-bold">تامین‌کنندگان</span>
                   </a>
                 </Link>
+                <Link href="/aboutus">
+                  <a
+                    className={`h-full grid place-content-center px-3 ml-8 ${
+                      router.pathname.startsWith("/aboutus")
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
+                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                    }`}
+                  >
+                    <span className="text-sm font-bold">‌
+                      درباره ما
+                    </span>
+                  </a>
+                </Link>
+
               </div>
               <div className="flex items-center">
                 <Link href="/">
@@ -228,7 +259,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                       src={hideHeader ? darkLogo : lightLogo}
                       height="45rem"
                       width="90rem"
-                      alt="عبداللهیان"
+                      alt="عبدالهیان"
                     />
                   </a>
                 </Link>

@@ -205,7 +205,7 @@ export const EnHeader = ({ hideHeader, otherPages }) => {
                     src={lightLogo}
                     height="45rem"
                     width="90rem"
-                    alt="عبداللهیان"
+                    alt="عبدالهیان"
                   />
                 </a>
               </Link>

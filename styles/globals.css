@@ -147,6 +147,10 @@ div.newsContainer p {
   @apply px-4 text-lg mt-10 text-justify;
 }
 
+.aboutusDIV h1 {
+  @apply text-black
+}
+
 .paginationButton {
   @apply h-8 w-8 pt-1 border-2 border-abdlBlue rounded-lg bg-abdlBlue text-white;
 }

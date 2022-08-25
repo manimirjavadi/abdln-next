@@ -93,10 +93,10 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">اخبار</li>
+                  <li className="text-lg mb-5 text-center">اخبار و مقالات</li>
                 </a>
               </Link>
-              <Link href="/articles/list">
+              {/* <Link href="/articles/list">
                 <a
                   className={`${
                     router.pathname.startsWith("/articles")
@@ -106,7 +106,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                 >
                   <li className="text-lg mb-5 text-center">مقالات</li>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="/aboutus">
                 <a
                   className={`${
@@ -172,10 +172,10 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">اخبار</span>
+                  <span className="text-sm font-bold">اخبار و مقالات</span>
                 </a>
               </Link>
-              <Link href="/articles/list">
+              {/* <Link href="/articles/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
                     router.pathname.startsWith("/articles")
@@ -185,7 +185,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                 >
                   <span className="text-sm font-bold">مقالات</span>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="/manufacturers/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${

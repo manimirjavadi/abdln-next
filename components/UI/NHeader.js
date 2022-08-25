@@ -107,6 +107,17 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <li className="text-lg mb-5 text-center">مقالات</li>
                 </a>
               </Link> */}
+              <Link href="/manufacturers/list">
+                <a
+                  className={`${
+                    router.pathname.startsWith("/manufacturers")
+                      ? "navbarActiveDark mobile"
+                      : ""
+                  }`}
+                >
+                  <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
+                </a>
+              </Link>
               <Link href="/aboutus">
                 <a
                   className={`${
@@ -200,8 +211,7 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/manufacturers/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    router.pathname.startsWith("/manufacturers") ||
-                    router.pathname.startsWith("/sproducts")
+                    router.pathname.startsWith("/manufacturers")
                       ? "navbarActiveDark"
                       : ""
                   }`}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Layout from "../../components/layouts/aboutus-layout";
 import { NormalProduct } from "../../components/Products/Fragments/NormalProductCard";
@@ -102,7 +103,18 @@ export default function NProducts({
               <h6 className="text-black h-[25px] border-b border-b-gray-300">
                 صنایع
               </h6>
-              <div className="px-2 py-4">{jsxIndustries}</div>
+              <Link href="/sproducts/list">
+                <div className="px-2 py-4 cursor-pointer">
+                  <div className="flex gap-2">
+                    <input
+                      type="checkbox"
+                      className="form-checkbox rounded text-primary ring-0 focus:ring-0"
+                    />
+                    <span className="ml-2">آرایشی و بهداشتی</span>
+                  </div>
+                  {jsxIndustries}
+                </div>
+              </Link>
             </div>
 
             <div className="mt-6 pl-4">

@@ -12,7 +12,10 @@ export const SproductCard = ({ cosmetic }) => {
     );
   });
   return (
-    <div className="min-h-[360px] pb-[60px] border-l-[10px] border-abdlOrange rounded-lg bg-white px-6 py-4 relative">
+    <div
+      className="min-h-[360px] pb-[60px] border-l-[10px] border-abdlOrange rounded-lg bg-white px-6 py-4 relative"
+      dir="ltr"
+    >
       <h5 className="text-black">{cosmetic.title.rendered}</h5>
       {/* Inci Name */}
       <div className="w-full mt-3">

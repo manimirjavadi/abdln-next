@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import lightLogo from "../../assets/images/abdln_f.png";
+import kimiaLogo from "../../assets/images/kimia.png";
 import { useRouter } from "next/router";
 import TIcon from "../icons/TIcon";
 import { motion, useAnimation } from "framer-motion";
@@ -75,7 +76,8 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/nproducts/list">
                 <a
                   className={`${
-                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/nproducts") ||
+                    router.pathname.startsWith("/sproducts")
                       ? "navbarActive"
                       : ""
                   }`}
@@ -91,10 +93,10 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <li className="text-lg mb-5 text-center">اخبار</li>
+                  <li className="text-lg mb-5 text-center">اخبار و مقالات</li>
                 </a>
               </Link>
-              <Link href="/articles/list">
+              {/* <Link href="/articles/list">
                 <a
                   className={`${
                     router.pathname.startsWith("/articles")
@@ -103,6 +105,17 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   }`}
                 >
                   <li className="text-lg mb-5 text-center">مقالات</li>
+                </a>
+              </Link> */}
+              <Link href="/manufacturers/list">
+                <a
+                  className={`${
+                    router.pathname.startsWith("/manufacturers")
+                      ? "navbarActiveDark mobile"
+                      : ""
+                  }`}
+                >
+                  <li className="text-lg mb-5 text-center">تامین‌کنندگان</li>
                 </a>
               </Link>
               <Link href="/aboutus">
@@ -114,6 +127,17 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   }`}
                 >
                   <li className="text-lg mb-5 text-center">درباره ما</li>
+                </a>
+              </Link>
+              <Link href="/contactus">
+                <a
+                  className={`${
+                    router.pathname.startsWith("/contactus")
+                      ? "navbarActiveDark mobile"
+                      : ""
+                  }`}
+                >
+                  <li className="text-lg mb-5 text-center">تماس با ما</li>
                 </a>
               </Link>
             </ul>
@@ -128,6 +152,18 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                 </TIcon>
               </label>
             </div>
+            <div className="flex items-center">
+              <Link href="/">
+                <a>
+                  <Image
+                    src={kimiaLogo}
+                    height="50rem"
+                    width="50rem"
+                    alt="عبدالهیان"
+                  />
+                </a>
+              </Link>
+            </div>
             <div className="hidden md:flex items-center">
               <Link href="/">
                 <a
@@ -141,7 +177,8 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/nproducts/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/nproducts") ||
+                    router.pathname.startsWith("/sproducts")
                       ? "navbarActiveDark"
                       : ""
                   }`}
@@ -157,10 +194,10 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                       : ""
                   }`}
                 >
-                  <span className="text-sm font-bold">اخبار</span>
+                  <span className="text-sm font-bold">اخبار و مقالات</span>
                 </a>
               </Link>
-              <Link href="/articles/list">
+              {/* <Link href="/articles/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
                     router.pathname.startsWith("/articles")
@@ -170,11 +207,11 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                 >
                   <span className="text-sm font-bold">مقالات</span>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="/manufacturers/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    (router.pathname.startsWith("/manufacturers") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/manufacturers")
                       ? "navbarActiveDark"
                       : ""
                   }`}
@@ -182,7 +219,6 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   <span className="text-sm font-bold">تامین‌کنندگان</span>
                 </a>
               </Link>
-
               <Link href="/aboutus">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
@@ -192,6 +228,17 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                   }`}
                 >
                   <span className="text-sm font-bold">درباره ما</span>
+                </a>
+              </Link>
+              <Link href="/contactus">
+                <a
+                  className={`h-full grid place-content-center px-3 ml-8 ${
+                    router.pathname.startsWith("/contactus")
+                      ? "navbarActiveDark"
+                      : ""
+                  }`}
+                >
+                  <span className="text-sm font-bold">تماس با ما</span>
                 </a>
               </Link>
             </div>

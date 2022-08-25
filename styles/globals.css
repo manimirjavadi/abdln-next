@@ -80,7 +80,7 @@ a {
 }
 
 .newsCard {
-  @apply bg-black rounded-xl h-[360px] bg-cover overflow-hidden;
+  @apply rounded-xl h-[250px] bg-cover overflow-hidden shadow-md;
 }
 
 .headerLight {
@@ -148,7 +148,7 @@ div.newsContainer p {
 }
 
 .aboutusDIV h1 {
-  @apply text-black
+  @apply text-black;
 }
 
 .paginationButton {

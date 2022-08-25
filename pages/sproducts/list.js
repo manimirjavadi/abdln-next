@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../../components/layouts/english-layout";
+import Layout from "../../components/layouts/aboutus-layout";
 import { SproductCard } from "../../components/Products/Fragments/SproductCard";
 import { getCosmeticCategories, getCosmetics } from "../../utils/wordpress";
 import Pagination from "../../components/UI/Pagination";
@@ -63,25 +63,25 @@ export default function SProducts({
           }}
           checked={selectedCategory === cat.id ? true : false}
         />
-        <span className="ml-2">{cat.name}</span>
+        <span className="mr-2">{cat.name}</span>
       </div>
     );
   });
   return (
-    <main className="w-full" dir="ltr">
+    <main className="w-full" dir="rtl">
       <div className="max-w-5xl mx-auto px-2">
-        <h3 className="text-black">Cosmetic Products</h3>
+        <h3 className="text-black">محصولات آرایشی و بهداشتی</h3>
         <div className="min-h-[500px] rounded-2xl py-6 px-4 grid grid-cols-2 md:grid-cols-4">
           {/* Sidebar for filtering */}
           <div className="min-h-[400px] max-h-[1000px] rounded-2xl py-3 px-4 border bg-white border-gray-300 hidden md:block">
             <h4 className="text-black h-[42px] border-b border-b-gray-300">
-              Filters
+              فیلترها
             </h4>
             {/* List */}
             <div className="mt-6 pl-4">
               {/* Categories */}
               <h6 className="text-black h-[25px] border-b border-b-gray-300">
-                Categories
+                دسته‌بندی‌ها
               </h6>
               <div className="px-2 py-4">{jsxCategories}</div>
             </div>

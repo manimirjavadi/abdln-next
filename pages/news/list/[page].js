@@ -96,9 +96,9 @@ export default function List({ banners, posts, totalPages, currentPage }) {
       </div>
 
       {/* List */}
-      <div className="max-w-5xl mx-auto mt-8 w-full">
+      <div className="max-w-6xl mx-auto mt-8 w-full">
         <div className="min-h-[500px] mb-6 bg-white/50 rounded-3xl px-16 py-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {jsxNews}
           </div>
         </div>

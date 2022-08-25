@@ -150,6 +150,17 @@ export const Header = ({ hideHeader, otherPages }) => {
                     <li className="text-lg mb-5 text-center">‌ درباره ما</li>
                   </a>
                 </Link>
+                <Link href="/contactus">
+                  <a
+                    className={`${
+                      router.pathname.startsWith("/contactus")
+                        ? "navbarActiveDark mobile"
+                        : ""
+                    }`}
+                  >
+                    <li className="text-lg mb-5 text-center">‌ تماس با ما</li>
+                  </a>
+                </Link>
               </ul>
             </div>
           </aside>
@@ -254,6 +265,19 @@ export const Header = ({ hideHeader, otherPages }) => {
                     }`}
                   >
                     <span className="text-sm font-bold">‌ درباره ما</span>
+                  </a>
+                </Link>
+                <Link href="/contactus">
+                  <a
+                    className={`h-full grid place-content-center px-3 ml-8 ${
+                      router.pathname.startsWith("/contactus")
+                        ? otherPages
+                          ? "navbarActiveDark"
+                          : "navbarActive"
+                        : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
+                    }`}
+                  >
+                    <span className="text-sm font-bold">‌ تماس با ما</span>
                   </a>
                 </Link>
               </div>

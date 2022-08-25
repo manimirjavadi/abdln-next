@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import lightLogo from "../../assets/images/abdln_f.png";
 import darkLogo from "../../assets/images/abdln_top.png";
+import kimialogo from "../../assets/images/kimia.png";
 import { useRouter } from "next/router";
 import TIcon from "../icons/TIcon";
 import { motion, useAnimation } from "framer-motion";
@@ -68,22 +69,19 @@ export const Header = ({ hideHeader, otherPages }) => {
                       router.pathname === "/" ? "navbarActiveDark" : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">
-                      صفحه اصلی
-                    </li>
+                    <li className="text-lg mb-5 text-center">صفحه اصلی</li>
                   </motion.a>
                 </Link>
                 <Link href="/nproducts/list">
                   <a
                     className={`${
-                      (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts") )
+                      router.pathname.startsWith("/nproducts") ||
+                      router.pathname.startsWith("/sproducts")
                         ? "navbarActiveDark"
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">
-                      محصولات   
-                    </li>
+                    <li className="text-lg mb-5 text-center">محصولات</li>
                   </a>
                 </Link>
                 {/* <Link href="/nproducts/list">
@@ -149,9 +147,7 @@ export const Header = ({ hideHeader, otherPages }) => {
                         : ""
                     }`}
                   >
-                    <li className="text-lg mb-5 text-center">‌
-                      درباره ما
-                    </li>
+                    <li className="text-lg mb-5 text-center">‌ درباره ما</li>
                   </a>
                 </Link>
               </ul>
@@ -168,6 +164,18 @@ export const Header = ({ hideHeader, otherPages }) => {
                     hamburgerMenu
                   </TIcon>
                 </label>
+              </div>
+              <div className="flex items-center">
+                <Link href="/">
+                  <a>
+                    <Image
+                      src={kimialogo}
+                      height="50rem"
+                      width="50rem"
+                      alt="عبدالهیان"
+                    />
+                  </a>
+                </Link>
               </div>
               <div className="hidden md:flex items-center">
                 <Link href="/">
@@ -245,12 +253,9 @@ export const Header = ({ hideHeader, otherPages }) => {
                         : "hover:text-white hover:border-b-4 hover:border-b-white duration-200"
                     }`}
                   >
-                    <span className="text-sm font-bold">‌
-                      درباره ما
-                    </span>
+                    <span className="text-sm font-bold">‌ درباره ما</span>
                   </a>
                 </Link>
-
               </div>
               <div className="flex items-center">
                 <Link href="/">

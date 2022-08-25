@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import lightLogo from "../../assets/images/abdln_f.png";
+import kimiaLogo from "../../assets/images/kimia.png";
 import { useRouter } from "next/router";
 import TIcon from "../icons/TIcon";
 import { motion, useAnimation } from "framer-motion";
@@ -75,7 +76,8 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/nproducts/list">
                 <a
                   className={`${
-                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/nproducts") ||
+                    router.pathname.startsWith("/sproducts")
                       ? "navbarActive"
                       : ""
                   }`}
@@ -128,6 +130,18 @@ export const NHeader = ({ hideHeader, otherPages }) => {
                 </TIcon>
               </label>
             </div>
+            <div className="flex items-center">
+              <Link href="/">
+                <a>
+                  <Image
+                    src={kimiaLogo}
+                    height="50rem"
+                    width="50rem"
+                    alt="عبدالهیان"
+                  />
+                </a>
+              </Link>
+            </div>
             <div className="hidden md:flex items-center">
               <Link href="/">
                 <a
@@ -141,7 +155,8 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/nproducts/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    (router.pathname.startsWith("/nproducts") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/nproducts") ||
+                    router.pathname.startsWith("/sproducts")
                       ? "navbarActiveDark"
                       : ""
                   }`}
@@ -174,7 +189,8 @@ export const NHeader = ({ hideHeader, otherPages }) => {
               <Link href="/manufacturers/list">
                 <a
                   className={`h-full grid place-content-center px-3 ml-8 ${
-                    (router.pathname.startsWith("/manufacturers") || router.pathname.startsWith("/sproducts"))
+                    router.pathname.startsWith("/manufacturers") ||
+                    router.pathname.startsWith("/sproducts")
                       ? "navbarActiveDark"
                       : ""
                   }`}

@@ -87,12 +87,12 @@ export default function SingleProduct({ product }) {
           <div className="px-8 pt-6 pb-2">
             <h1 className="text-2xl text-black">{product.title.rendered}</h1>
           </div>
-          <div className="pr-10">
+          {/* <div className="pr-10">
             <span className="text-abdlOrange text-lg font-bold">
               دسته‌بندی:
             </span>
             {jsxIndustries}
-          </div>
+          </div> */}
           <div className="pr-10">
             <span className="text-abdlOrange text-lg font-bold">
               تامین‌کنندگان:
@@ -132,12 +132,12 @@ export default function SingleProduct({ product }) {
                           {selectedTab.categories}
                         </span> */}
                       </th>
-                      <th className="text-lg">
+                      {/* <th className="text-lg">
                         <span> مواد تشکیل‌دهنده</span>
-                        {/* <span className="text-abdlOrange">
+                        <span className="text-abdlOrange">
                           {selectedTab.categories}
-                        </span> */}
-                      </th>
+                        </span>
+                      </th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -174,7 +174,7 @@ export default function SingleProduct({ product }) {
                             );
                           })}
                       </td>
-                      <td className="text-center">
+                      {/* <td className="text-center">
                         {selectedTab.ingredients &&
                           selectedTab?.ingredients?.map((i) => {
                             return (
@@ -189,7 +189,7 @@ export default function SingleProduct({ product }) {
                               </span>
                             );
                           })}
-                      </td>
+                      </td> */}
                     </tr>
                   </tbody>
                 </table>

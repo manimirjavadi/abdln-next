@@ -9,9 +9,15 @@ export default function SingleProduct({ product }) {
   const featuredmedia = product["_embedded"]["wp:featuredmedia"][0];
   const [selectedTab, setSelectedTab] = useState(product.acf?.grades[0] ?? "");
 
+  const [seeFullcontent, setSeeFullContent] = useState(false);
+
   let jsxIndustries;
   let jsxManufacturers;
   let jsxTabs;
+
+  const toggleFullContent = () => {
+    setSeeFullContent(!seeFullcontent);
+  };
 
   if (product.acf.industries) {
     jsxIndustries = product.acf?.industries?.map((ind) => {
@@ -59,31 +65,7 @@ export default function SingleProduct({ product }) {
   return (
     <main className="max-w-5xl mx-auto px-4 md:px-0 py-10">
       <div className="bg-white rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-4 py-4 pb-[100px]">
-        <div className="relative w-full h-[300px]">
-          <Image
-            alt={product.title.rendered}
-            src={
-              selectedTab.product_image
-                ? selectedTab.product_image
-                : featuredmedia["source_url"]
-            }
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-        <div className="md:hidden relative w-full h-[300px]">
-          <Image
-            alt={product.title.rendered}
-            src={
-              selectedTab.product_image
-                ? selectedTab.product_image
-                : featuredmedia["source_url"]
-            }
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-        <div className="pl-6 pt-6">
+        <div className="pl-6 pt-6 order-3 md:order-1">
           <div className="px-8 pt-6 pb-2">
             <h1 className="text-2xl text-black">{product.title.rendered}</h1>
           </div>
@@ -100,14 +82,48 @@ export default function SingleProduct({ product }) {
             {jsxManufacturers}
           </div>
           <div
-            className="singleProduct px-8 pt-6 pb-2 col-span-full"
+            className={`singleProduct px-8 pt-6 pb-2 col-span-full ${
+              seeFullcontent ? "" : "line-clamp-5"
+            }`}
             dangerouslySetInnerHTML={{ __html: product.content.rendered }}
           ></div>
+          <div className={`px-8 pb-2 col-span-full line-clamp-5`}>
+            <a
+              className="text-sm text-abdlOrange cursor-pointer"
+              onClick={toggleFullContent}
+            >
+              ادامه مطلب
+            </a>
+          </div>
         </div>
-        <div className="pl-6 col-span-2 px-5">
+        <div className="relative w-full h-[300px] order-1">
+          <Image
+            alt={product.title.rendered}
+            src={
+              selectedTab.product_image
+                ? selectedTab.product_image
+                : featuredmedia["source_url"]
+            }
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <div className="md:hidden relative w-full h-[300px] order-2">
+          <Image
+            alt={product.title.rendered}
+            src={
+              selectedTab.product_image
+                ? selectedTab.product_image
+                : featuredmedia["source_url"]
+            }
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <div className="pl-6 col-span-2 px-5 order-4">
           <div className="w-full">
             <h5>
-              {product.title.rendered} <span> </span> در دیگر صنایع
+              {product.title.rendered} <span> </span> در صنایع مرتبط
             </h5>
           </div>
           <div className="rounded w-full h-full mx-auto mt-4">

@@ -17,7 +17,7 @@ export const Footer = ({ otherPages = false }) => {
         </div>
       </div>
       <div className="flex justify-center border-t-2 border-abdlBlue mt-8 pt-2 text-abdlBlue font-bold">
-        تمام حقوق این سایت متعلق به گروه بازرگانی عبدالهیان است.
+        تمام حقوق این سایت متعلق به بازرگانی عبدالهیان است.
       </div>
     </div>
   );

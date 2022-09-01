@@ -70,7 +70,7 @@ export const Details = () => {
             </svg>
 
             <span className="mt-1 text-abdlBlue font-bold">
-              تهران - خیابان مطهری - جنب تعزیرات حکومتی - پلاک ۱۲۳ طبقه دوم
+              تهران - خیابان مطهری - پلاک ۱۲۳ - طبقه دوم
             </span>
           </div>
         </div>

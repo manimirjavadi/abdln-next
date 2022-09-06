@@ -5,12 +5,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: [
-      "localhost",
-      "abdln.com",
-      "manimirjavadi.info",
-      "wp.manimirjavadi.info",
-    ],
+    domains: ["localhost", "wp.abdln.com"],
   },
 };
 
